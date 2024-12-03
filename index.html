@@ -31,14 +31,15 @@
         gtag('js', new Date());
 
         gtag('config', 'G-T6NR4G2D8F');
+        
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
     </script>
-
-
-
-
 </head>
 
-<body class="bg_colour">
+<body class="bg_colour_dark">
+    
     <table border=0 class="bg_colour"
         style="width:100%;max-width:900px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
         <tbody>
@@ -58,7 +59,12 @@
                                 </td>
                                 <td style="padding:2.5%;width:60%;vertical-align:middle">
                                     <p align="center" style="text-align:center">
-                                        <font size="8">Shiva Shrestha</font><br>
+                                    <a href="https://sh7vashrestha.github.io/portfolio/" target="_blank" data-toggle="popover" data-toggle="tooltip" data-placement="right" title="Visit Old Site 🔙" style="text-decoration: none;">
+                                        <font size="8">
+                                            Shiva Shrestha
+                                        </font>
+                                    </a>
+                                    <br>
                                         <b>Academic Email</b>:
                                         <a href="mailto:pas076bei038@wrc.edu.np">pas076bei038@wrc.edu.np</a>
                                         <br>
@@ -70,15 +76,15 @@
                                     <p style="text-align:center">
 
                                         &nbsp|&nbsp
-                                        <a href="#education" onclick=Expand("education")>Education</a>
+                                        <a href="#education" onclick=Expand(education)>Education</a>
                                         &nbsp|&nbsp
-                                        <a href="#experience" onclick=Expand("experience")>Experience</a>
+                                        <a href="#experience" onclick=Expand(experience)>Experience</a>
                                         &nbsp|&nbsp
-                                        <a href="#publications" onclick=Expand("publications")>Publications</a>
+                                        <a href="#publications" onclick=Expand(publications)>Publications</a>
                                         &nbsp|&nbsp
-                                        <a href="#projects" onclick=Expand("projects")>Projects</a>
+                                        <a href="#projects" onclick=Expand(projects)>Projects</a>
                                         &nbsp|&nbsp
-                                        <a href="#Blogs" onclick=Expand("Blogs")>Blogs</a>
+                                        <a href="#Blogs" onclick=Expand(Blogs)>Blogs</a>
                                         &nbsp|&nbsp
                                     </p>
                                 </td>
@@ -95,22 +101,20 @@
                             <tr style="padding:0px">
                                 <td style="padding:2.5%;width:63%;vertical-align:middle">
                                     <!-- <p><em>Website is under construction. Some of the information might be wrong/outdated.</em></p> -->
-                                    <p><span class="wave">👋</span> Hi,I have recently completed my undergraduate at <a
+                                    <p><span class="wave">👋</span> Hi, I have recently completed my undergraduate at <a
                                             href="https://ioepas.edu.np/" target="_blank">Tribhuvan University,
                                             Institute of Engineering (IOE), Pashchimanchal Campus</a> where I earned a
                                         Bachelor's degree in Electronics, Communication and Information Engineering
                                         under the guidance of <a
                                             href="https://www.researchgate.net/profile/Smita-Adhikari-2"
-                                            target="_blank" rel="noopener noreferrer">Asst. Prof. Smita Adhikari. </a>
+                                            target="_blank">Asst. Prof. Smita Adhikari. </a>
                                             During my time at university, I worked on various embedded systems projects, with a focus on automation and machine learning.</p>
 
                                     <p>I'm also honored to have worked with CTO <a
                                             href="https://www.linkedin.com/in/bhattaprashant00/" target="_blank"
-                                            rel="noopener noreferrer">Er. Prashant Bhatta</a> and Embedded System Engineer <a
-                                            href="https://www.linkedin.com/in/amrit-aryal/" target="_blank"
-                                            rel="noopener noreferrer">Er. Amrit Aryal </a>at <a
-                                            href="https://yarsa.tech/" target="_blank"
-                                            rel="noopener noreferrer">Yarsa Tech.</a>
+                                            >Er. Prashant Bhatta</a> and Embedded System Engineer <a
+                                            href="https://www.linkedin.com/in/amrit-aryal/" target="_blank">Er. Amrit Aryal </a>at <a
+                                            href="https://yarsa.tech/" target="_blank">Yarsa Tech.</a>
                                             At Yarsa Tech, I worked as an Electronics Engineer, where I designed embedded solutions, developed automated systems, and collaborated with a skilled team to optimize workflows.
 
                                     <p>
@@ -186,7 +190,7 @@
                                             <li>Event co-ordinator of Robo-rookies, Taught PCB designing and C
                                                 programming to freshers </li>
                                             <li>Core Committee member(Design Transformer) of <a href="https://robotics.wrc.edu.np/" target="_blank">Robotics Club, WRC</a></li>
-                                            <li>Core Committee Member of <a href="https://www.facebook.com/groups/411701922206986/?hoisted_section_header_type=recently_seen&multi_permalinks=2796417487068739" target="_blank">लु निभा: पुच: नेवा बिद्यार्थी दबु (Cultural Club), WRC</a></li>
+                                            <li>Core Committee Member of <a href="https://www.facebook.com/profile.php?id=100088236440169" target="_blank">लु निभा: पुच: नेवा बिद्यार्थी दबु (Cultural Club), WRC</a></li>
 
                                         </ul>
                                         </p>
@@ -300,7 +304,7 @@
                                             and YOLOv8 Detection.</papertitle></big>
                                         <br>
                                         <p>
-                                            Prateek Paudel*, Samman Shrestha*, <strong><a href="https://www.researchgate.net/profile/Shiva-Shrestha-14" target="_blank">Shiva Shrestha*</a></strong>, et al.
+                                            Prateek Paudel*, Samman Shrestha*, <strong><a href="https://www.researchgate.net/profile/Shiva-Shrestha-14" target="_blank">Shiva Shrestha</a></strong>*, Sudarshan Gurung*, Smita Adhikari
                                             <br>
                                             <strong>IRO JORNAL</strong>
                                             <em><a href="https://doi.org/10.36548/jaicn.2024.3.004"
@@ -324,7 +328,7 @@
                                             Classification</papertitle></big>
                                         <br>
                                         <p>
-                                            <strong><a href="https://www.researchgate.net/profile/Shiva-Shrestha-14" target="_blank">Shiva Shrestha*</a></strong>, Samman Shrestha, Prateek Paudel, Sudarshan Gurung, Sulav Gairee, Smita Adhikari
+                                            <strong><a href="https://www.researchgate.net/profile/Shiva-Shrestha-14" target="_blank">Shiva Shrestha*</a></strong>, Samman Shrestha*, Prateek Paudel*, Sudarshan Gurung*, Sulav Gairee, Smita Adhikari
                                             <br>
                                             <strong>15th IOE Graduate Conference</strong>
                                             <em><a href="http://conference.ioe.edu.np/publications/ioegc15/IOEGC-15-004-A1-4-61.pdf"
@@ -615,19 +619,20 @@
         <table>
             <tr>
                 <td>
-                    <p align="center">
-                        <font size="2"> <a href="data/Shiva_CV.pdf" target="_blank"> <img src="images/cv.png"
-                                    height="20rem"></a>
-                            &nbsp; <a href="https://github.com/sh7vashrestha" target="_blank"><img src="images/github.png"
-                                    height="20rem"></a>
-                            &nbsp; <a href="https://www.instagram.com/sh7va_shrestha/" target="_blank"><img
-                                    src="images/instagram.png" height="20rem"></a>
+                    <p align="center" style="padding: 2px;">
+                        <a href="data/Shiva_CV.pdf" style="padding-left:30px ;" target="_blank"> <img src="images/cv.png"
+                                    height="30rem"></a>
+                            &nbsp; <a href="https://github.com/sh7vashrestha" style="padding-left:30px ;" target="_blank"><img src="images/github.png"
+                                    height="30rem"></a>
+                            &nbsp; <a href="https://www.instagram.com/sh7va_shrestha/" style="padding-left:30px ;" target="_blank"><img
+                                    src="images/instagram.png" height="30rem"></a>
                             &nbsp;
                     </p>
                 </td>
             </tr>
         </table>
     </div>
+    
 
 </body>
 
