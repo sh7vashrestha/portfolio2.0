@@ -1,639 +1,1043 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shiva Shrestha — PhD CS @ Kennesaw State University</title>
+  <meta name="description" content="Shiva Shrestha — PhD student in Computer Science at Kennesaw State University, research in Edge Security, Embedded Systems, Machine Learning, and LLMs. Graduate Research Assistant under Dr. Honghui Xu.">
+  <meta name="author" content="Shiva Shrestha">
+  <link rel="icon" href="images/ShivaLOGO.ico">
 
-    <title>Shiva Shrestha</title>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="js/scramble.js"></script>
-    <meta name="author" content="Shiva Shrestha">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="Description"
-        content="Shiva Shrestha | Electronics, Communication and Information Engineer | ECE @ TRIBHUVAN UNIVERSITY IOE Pashchimanchal Campus">
-    <meta name="keywords"
-        content="Shiva Shrestha, TRIBHUVAN UNIVERSITY, TU, IOE Pashchimanchal Campus, Nepal, Electronics Engineer, Yarsa Tech, Deep Learning">
+  <style>
+    :root {
+      --primary: #3b82f6;
+      --primary-dark: #2563eb;
+      --secondary: #64748b;
+      --accent: #0ea5e9;
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8fafc;
+      --bg-card: #ffffff;
+      --text-primary: #1e293b;
+      --text-secondary: #64748b;
+      --text-muted: #94a3b8;
+      --border: #e2e8f0;
+      --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
 
-        <link rel="icon" type="image/x-icon" href="images/ShivaLOGO.ico">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T6NR4G2D8F"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+    /* Dark mode variables */
+    [data-theme="dark"] {
+      --primary: #60a5fa;
+      --primary-dark: #3b82f6;
+      --secondary: #94a3b8;
+      --accent: #38bdf8;
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --bg-card: #1e293b;
+      --text-primary: #f1f5f9;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+    }
 
-        gtag('config', 'G-T6NR4G2D8F');
-        
-        $(document).ready(function () {
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background-color: var(--bg-primary);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 600;
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+    }
+
+    .display-4 {
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+
+    .lead {
+      font-size: 1.125rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+    }
+
+    /* Navigation */
+    .navbar {
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.95) !important;
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    [data-theme="dark"] .navbar {
+      background-color: rgba(15, 23, 42, 0.95) !important;
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--primary) !important;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .navbar-brand:hover {
+      color: var(--primary-dark) !important;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: var(--text-secondary) !important;
+      padding: 0.5rem 1rem !important;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus {
+      color: var(--primary) !important;
+    }
+
+    .nav-link.active {
+      color: var(--primary) !important;
+      font-weight: 600;
+    }
+
+    /* Theme Toggle Button */
+    .theme-toggle {
+      position: relative;
+      width: 50px;
+      height: 26px;
+      background: var(--border);
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2px 4px;
+      margin-left: 1rem;
+    }
+
+    .theme-toggle:hover {
+      background: var(--text-muted);
+    }
+
+    .theme-toggle-slider {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    [data-theme="dark"] .theme-toggle-slider {
+      transform: translateX(24px);
+      background: var(--bg-card);
+    }
+
+    .theme-icon {
+      width: 12px;
+      height: 12px;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+
+    .theme-toggle:hover .theme-icon {
+      opacity: 1;
+    }
+
+    [data-theme="dark"] .sun-icon {
+      opacity: 0.4;
+    }
+
+    [data-theme="dark"] .moon-icon {
+      opacity: 1;
+    }
+
+    .moon-icon {
+      opacity: 0.4;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--border) 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 4rem 0;
+      margin-top: 76px; /* Account for fixed navbar */
+      transition: background 0.3s ease;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 80%, rgba(14, 165, 233, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    [data-theme="dark"] .hero::before {
+      background: radial-gradient(circle at 30% 20%, rgba(96, 165, 250, 0.15) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 80%, rgba(56, 189, 248, 0.15) 0%, transparent 50%);
+    }
+
+    .avatar {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--bg-primary);
+      box-shadow: var(--shadow-lg);
+      transition: transform 0.3s ease;
+    }
+
+    .avatar:hover {
+      transform: scale(1.05);
+    }
+
+    /* Badges */
+    .badge-custom {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.875rem;
+    }
+
+    /* Buttons */
+    .btn {
+      font-weight: 500;
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      border-width: 1px;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      border-color: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline-primary {
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .btn-outline-primary:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline-secondary {
+      color: var(--text-secondary);
+      border-color: var(--border);
+    }
+
+    .btn-outline-secondary:hover {
+      background: var(--text-secondary);
+      border-color: var(--text-secondary);
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    /* Cards */
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      background: var(--bg-card);
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+    }
+
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .card-img-top {
+      transform: scale(1.05);
+    }
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+
+    .card-title a {
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .card-title a:hover {
+      color: var(--primary);
+    }
+
+    /* Sections */
+    .section {
+      padding: 4rem 0;
+      transition: background-color 0.3s ease;
+    }
+
+    .section-alt {
+      background-color: var(--bg-secondary);
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: var(--text-primary);
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 3rem;
+      height: 3px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 2px;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0.75rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--primary), var(--accent));
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -0.5rem;
+      top: 0.25rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 3px solid var(--bg-primary);
+      box-shadow: var(--shadow);
+    }
+
+    .timeline-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: var(--text-primary);
+    }
+
+    .timeline-meta {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Links */
+    .link-subtle {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px dashed var(--primary);
+      transition: all 0.2s ease;
+    }
+
+    .link-subtle:hover {
+      color: var(--primary);
+      border-bottom-color: transparent;
+    }
+
+    /* Publication cards */
+    .publication-card {
+      height: 100%;
+    }
+
+    .publication-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+
+    .publication-venue {
+      font-weight: 500;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+    }
+
+    .publication-authors {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .footer-logo img {
+      height: 32px;
+      margin-right: 1rem;
+      opacity: 0.8;
+      transition: opacity 0.2s ease;
+    }
+
+    .footer-logo img:hover {
+      opacity: 1;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 3rem 0;
+      }
+      
+      .section {
+        padding: 3rem 0;
+      }
+      
+      .section-title {
+        font-size: 1.75rem;
+      }
+      
+      .display-4 {
+        font-size: 2rem;
+      }
+      
+      .timeline {
+        padding-left: 1.5rem;
+      }
+      
+      .timeline-item {
+        padding-left: 1.5rem;
+      }
+      
+      .btn-group-vertical .btn {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    /* Focus styles for accessibility */
+    .btn:focus,
+    .nav-link:focus,
+    .navbar-brand:focus {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    /* Smooth transitions */
+    * {
+      transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    /* Reduced motion for accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      
+      html {
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
 </head>
 
-<body class="bg_colour_dark">
-    
-    <table border=0 class="bg_colour"
-        style="width:100%;max-width:900px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-        <tbody>
-            <tr style="padding:0px">
-                <td style="padding:0px">
-
-                    <!-- Name tab -->
-                    <table border=0 class="bg_colour"
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-
-
-                            <tr style="padding:0px">
-                                <td style="padding:2.5%;width:30%;max-width:30%">
-                                    <a href="images/ShivaProfile.png"><img style="width:100%;max-width:100%"
-                                            alt="profile photo" src="images/ShivaProfile.png" class="img-circle"></a>
-                                </td>
-                                <td style="padding:2.5%;width:60%;vertical-align:middle">
-                                    <p align="center" style="text-align:center">
-                                    <a href="https://sh7vashrestha.github.io/portfolio/" target="_blank" data-toggle="popover" data-toggle="tooltip" data-placement="right" title="Visit Old Site 🔙" style="text-decoration: none;">
-                                        <font size="8">
-                                            Shiva Shrestha
-                                        </font>
-                                    </a>
-                                    <br>
-                                        <b>Academic Email</b>:
-                                        <a href="mailto:pas076bei038@wrc.edu.np">pas076bei038@wrc.edu.np</a>
-                                        <br>
-
-                                        <b>Personal Email</b>:
-                                        <a href="mailto:sh7vashrestha@gmail.com">sh7vashrestha@gmail.com</a>
-                                    </p>
-
-                                    <p style="text-align:center">
-
-                                        &nbsp|&nbsp
-                                        <a href="#education" onclick=Expand(education)>Education</a>
-                                        &nbsp|&nbsp
-                                        <a href="#experience" onclick=Expand(experience)>Experience</a>
-                                        &nbsp|&nbsp
-                                        <a href="#publications" onclick=Expand(publications)>Publications</a>
-                                        &nbsp|&nbsp
-                                        <a href="#projects" onclick=Expand(projects)>Projects</a>
-                                        &nbsp|&nbsp
-                                        <a href="#Blogs" onclick=Expand(Blogs)>Blogs</a>
-                                        &nbsp|&nbsp
-                                    </p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-
-                    <!-- About section, quick links -->
-
-                    <table
-                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                        <tbody>
-                            <tr style="padding:0px">
-                                <td style="padding:2.5%;width:63%;vertical-align:middle">
-                                    <!-- <p><em>Website is under construction. Some of the information might be wrong/outdated.</em></p> -->
-                                    <p><span class="wave">👋</span> Hi, I have recently completed my undergraduate at <a
-                                            href="https://ioepas.edu.np/" target="_blank">Tribhuvan University,
-                                            Institute of Engineering (IOE), Pashchimanchal Campus</a> where I earned a
-                                        Bachelor's degree in Electronics, Communication and Information Engineering
-                                        under the guidance of <a
-                                            href="https://www.researchgate.net/profile/Smita-Adhikari-2"
-                                            target="_blank">Asst. Prof. Smita Adhikari. </a>
-                                            During my time at university, I worked on various embedded systems projects, with a focus on automation and machine learning.</p>
-
-                                    <p>I'm also honored to have worked with CTO <a
-                                            href="https://www.linkedin.com/in/bhattaprashant00/" target="_blank"
-                                            >Er. Prashant Bhatta</a> and Embedded System Engineer <a
-                                            href="https://www.linkedin.com/in/amrit-aryal/" target="_blank">Er. Amrit Aryal </a>at <a
-                                            href="https://yarsa.tech/" target="_blank">Yarsa Tech.</a>
-                                            At Yarsa Tech, I worked as an Electronics Engineer, where I designed embedded solutions, developed automated systems, and collaborated with a skilled team to optimize workflows.
-
-                                    <p>
-                                        I invite you to review my <a href="data/Shiva_CV .pdf"
-                                            target="_blank">resume</a>
-                                        and feel free to contact me via email if you would like to discuss potential
-                                        opportunities or collaborations.
-                                    </p>
-                                    <hr class="soft">
-                                    <p style="text-align:center"> <b>Research Interests:</b> <br>My research interests
-                                        lie at the intersection of
-                                        Electronics, Embedded System, Machine Learning, and IoT.
-                                    </p>
-                                    <hr class="soft">
-
-
-                                    <p style="text-align:center">
-                                        &nbsp~&nbsp
-                                        <!-- <a href="mailto:amishmittal@outlook.com" target="_blank">Email</a> &nbsp|&nbsp -->
-                                        <a href="data/Shiva_CV.pdf" target="_blank">Resume</a> &nbsp|&nbsp
-                                        <!-- <a href="https://scholar.google.co.in/citations?user=PySXCeAAAAAJ&hl=en" target="_blank" >Google Scholar</a> &nbsp|&nbsp -->
-                                        <a href="https://github.com/sh7vashrestha" target="_blank">Github</a>
-                                        &nbsp|&nbsp
-                                        <a href="https://www.linkedin.com/in/sh7va/" target="_blank">LinkedIn</a>
-                                        &nbsp|&nbsp
-                                        <a href="mailto:sh7vashrestha@gmail.com" target="_blank">Mail</a>
-                                        &nbsp~&nbsp
-                                    </p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <!-- Education -->
-
-                    <button style="border:0px transparent; background-color: transparent;outline:none;" type="button"
-                        class="collapsible" data-toggle="collapse" data-target="#content-education" id="education">
-                        <heading>Education</heading>
-                    </button>
-
-                    <div id="content-education" class="collapse in">
-
-                        <table border=0 class="bg_colour"
-                            style="padding:20px;width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto">
-                            <tbody>
-
-                                <tr>
-                                    <td style="padding:10px;width:25%;vertical-align:middle">
-                                        <div class="one">
-                                            <img src='images/IOELogo.png' width="150" class="side-image">
-                                        </div>
-                                    </td>
-                                    <td style="padding:10px;width:75%;vertical-align:top">
-                                        <!-- <papertitle style="color:gray"><big>Software Development Engineer Intern</big> </papertitle> <papertitle ><big> | Expedia Group</big></papertitle> -->
-
-                                        <papertitle style="color:gray">Bachelors in
-                                        </papertitle>
-                                        <papertitle><big>Electronics, Communication &
-                                                Information Engineering</big></papertitle>
-                                        <br>
-                                        <papertitle><big>Tribhubhan University,
-                                                IOE Pashchimanchal Campus</big></papertitle>
-                                        <br>
-                                        Nov 2019 – April 2024
-                                        <br>
-                                        <strong>82.32%</strong><br>
-                                        <em>Top of the faculty </em>
-
-                                        <br>
-                                        <p>
-                                            Positions of Responsiblity:
-                                        <ul>
-                                            <li>Event co-ordinator of Battle for speed, Taught PCB designing and C
-                                                programming to freshers </li>
-                                            <li>Core Committee member(Design Transformer) of <a href="https://robotics.wrc.edu.np/" target="_blank">Robotics Club, WRC</a></li>
-                                            <li>Core Committee Member of <a href="https://www.facebook.com/profile.php?id=100088236440169" target="_blank">लु निभा: पुच: नेवा बिद्यार्थी दबु (Cultural Club), WRC</a></li>
-
-                                        </ul>
-                                        </p>
-                                    </td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                    <hr class="soft">
-
-                    <!-- Experience -->
-
-                    <button style="border:0px transparent; background-color: transparent;outline:none;" type="button"
-                        class="collapsible" data-toggle="collapse" data-target="#content-experience" id="experience">
-                        <heading>Experience</heading>
-                    </button>
-                    <div id="content-experience" class="collapse in">
-
-                        <table border=0 class="bg_colour"
-                            style="padding:20px;width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;margin-top: 10px;">
-                            <tbody>
-                                <tr>
-                                    <td style="padding:10px;width:25%;vertical-align:middle">
-                                        <div class="one">
-                                            <img src='images/YarsaTech.png' width="150" class="side-image">
-                                        </div>
-                                    </td>
-                                    <td style="padding:10px;width:75%;vertical-align:top">
-                                        <papertitle style="color:gray"><big>Electronics Engineer</big> </papertitle>
-                                        <br>
-                                        <papertitle><big>Yarsa Tech, Nepal</big></papertitle>
-                                        <br>
-                                        <em>May 2024 - August 2024</em>
-                                        <br><a href="https://yarsa.tech/" target="_blank">[website]</a><br>
-                                        <br>
-                                        <p>
-                                            CTO: Er. Prashant Bhatta<br>
-                                        <ul>
-                                            <li>Engineered an ESP8266-based audio playback system, integrating SPI flash for efficient storage and a DAC for high-quality audio output.</li>
-                                            <li>Designed and developed an STM32-based storytelling toy, delivering an interactive and engagin</li>
-                                            <li>Built a cloud printing solution using Raspberry Pi, embedded Linux, CUPS, and MQTT, enabling seamless remote printing capabilities.</li>
-                                            <li> Automated barcode printing by scripting custom solutions, optimizing the printing workflow and reducing manual intervention.</li>
-                                        </ul>
-                                        </p>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td style="padding:10px;width:25%;vertical-align:middle">
-                                        <div class="one">
-                                            <img src='images/RoboticsClub.jpg' width="150" class="side-image">
-                                        </div>
-                                    </td>
-                                    <td style="padding:10px;width:75%;vertical-align:top">
-                                        <papertitle style="color:gray"><big>Robotics Club
-                                            </big>
-                                        </papertitle>
-                                        <br>
-                                        <papertitle><big>IOE, Pashchimanchal Campus</big></papertitle>
-                                        <br>
-                                        <em>2021 - 2023</em>
-                                        <br>
-                                        <br>
-                                        <p>
-                                            Core member(Design Transformer)<br>
-                                        <ul>
-                                            <li>Designed and overviewed all graphics related tasks</li>
-                                            <li>Conducted training on PCB designing and embedded programming - C++</li>
-                                            <li>Worked on projects like micromouse, fpp drone, battelbot, robotic arm
-                                            </li>
-                                            <li>Represented club in national level events like <a
-                                                    href="https://innovationnepal.nast.gov.np/"
-                                                    target="_blank">NIDN</a>, <a href="https://www.locus.com.np/"
-                                                    target="_blank">Locus</a>, <a
-                                                    href="https://somes.ioe.edu.np/mechtrix-2079/"
-                                                    target="_blank">Mechtrix</a></li>
-                                            <li>Event co-ordinator of Battle For Speed - Program designed to train freshers
-                                                in the field of mechatronics and robotics.</li>
-                                        </ul>
-                                        </p>
-                                    </td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                    <hr class="soft">
-
-                    <!-- Publications -->
-
-<button style="border:0px transparent; background-color: transparent;outline:none;" type="button"
-                        class="collapsible" data-toggle="collapse" data-target="#content-publications"
-                        id="publications">
-                        <heading>Publications</heading>
-                    </button>
-                    <div id="content-publications" class="collapse in">
-
-                        <table border=0 class="bg_colour"
-                            style="padding:20px;width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                            <tbody>
-
-                                <tr>
-                                    <td style="padding:20px;width:25%;vertical-align:middle">
-                                        <div class="one" style="padding:20px;width:25%;vertical-align:middle">
-                                            <img src='images/IRO.png' width="100">
-                                        </div>
-                                    </td>
-                                    <td style="padding:20px;width:75%;vertical-align:top">
-                                        <papertitle><big>Automated Waste Sorting with Delta Arm
-                                            and YOLOv8 Detection.</papertitle></big>
-                                        <br>
-                                        <p>
-                                            Prateek Paudel*, Samman Shrestha*, <strong><a href="https://www.researchgate.net/profile/Shiva-Shrestha-14" target="_blank">Shiva Shrestha</a></strong>*, Sudarshan Gurung*, Smita Adhikari
-                                            <br>
-                                            <strong>IRO JORNAL</strong>
-                                            <em><a href="https://doi.org/10.36548/jaicn.2024.3.004"
-                                                    target="_blank">[paper]</a></em>
-                                        </p>
-                                        <p>
-                                            Published in the IRO Journal, this research integrates YOLOv8 and a delta arm mechanism for automated, precise waste sorting, improving efficiency in waste management systems.
-                                        </p>
-                                        <p><small>*Authors contributed equally</small></p>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td style="padding:20px;width:25%;vertical-align:middle">
-                                        <div class="one" style="padding:20px;width:25%;vertical-align:middle">
-                                            <img src='images/IOECONFERENCE.png' width="100">
-                                        </div>
-                                    </td>
-                                    <td style="padding:20px;width:75%;vertical-align:top">
-                                        <papertitle><big>Deep Learning for Waste Management: Leveraging YOLO for Accurate Waste
-                                            Classification</papertitle></big>
-                                        <br>
-                                        <p>
-                                            <strong><a href="https://www.researchgate.net/profile/Shiva-Shrestha-14" target="_blank">Shiva Shrestha*</a></strong>, Samman Shrestha*, Prateek Paudel*, Sudarshan Gurung*, Sulav Gairee, Smita Adhikari
-                                            <br>
-                                            <strong>15th IOE Graduate Conference</strong>
-                                            <em><a href="http://conference.ioe.edu.np/publications/ioegc15/IOEGC-15-004-A1-4-61.pdf"
-                                                    target="_blank">[paper]</a></em>
-                                        </p>
-                                        <p>
-                                            This paper explores the use of deep learning for waste management, leveraging YOLO for efficient waste classification, and was presented at the 15th IOE Graduate Conference in 2024.
-                                        </p>
-                                        <p><small>*Authors contributed equally</small></p>
-                                    </td>
-                                </tr>
-                                
-
-                            </tbody>
-                        </table>
-                        
-                    </div>
-                    <hr class="soft"> 
-
-
-                    <!-- Projects -->
-
-                    <button style="border:0px transparent; background-color: transparent;outline:none;" type="button"
-                        class="collapsible" data-toggle="collapse" data-target="#content-projects" id="projects">
-                        <heading>Key Projects</heading>
-                    </button>
-                    <div id="content-projects" class="collapse in">
-
-                        <table
-                            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                            <tbody>
-                                <tr>
-                                    <td style="padding:20px;width:25%;vertical-align:middle">
-                                        <div class="one">
-                                            <img src='images/Deltaarm.gif' width="150">
-                                        </div>
-                                    </td>
-                                    <td style="padding:20px;width:75%;vertical-align:top">
-                                        <papertitle><big>DELTA ARM WASTE CLASSIFIER
-                                        </papertitle></big>
-                                        <br>
-                                        <p><em><a href="https://github.com/sh7vashrestha/DeltaArm"
-                                                    target="_blank">[code]</a>
-                                        <p>
-                                            <strong>Major Project</strong><br>
-                                            
-                                        <ul>
-                                            <li>Built a robotic delta arm integrated with a YOLOv8 model for waste
-                                                identification and sorting into four categories: Biodegradable, Plastic,
-                                                Paper, Metal
-                                            </li>
-                                            <li>Objective: Develop a deep learning-based waste classification system.
-                                            <li> Framework: YOLOv8 object detection.
-                                            </li>
-                                            <li>Importance: Enhances waste management through proper categorization.
-                                            </li>
-                                            <li>Categories: Bio-degradable, paper, plastic, metal.
-                                            </li>
-                                            <li>Performance:
-                                                <em>Precision: 0.94118,
-                                                    Recall: 0.96622,
-                                                    mAP@50: 0.98252</em>
-                                            </li>
-                                        </ul>
-                                        </p>
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <td style="padding:20px;width:25%;vertical-align:middle">
-                                        <div class="one">
-                                            <img src='images/SmartHome.gif' width="150">
-                                        </div>
-                                    </td>
-                                    <td style="padding:20px;width:75%;vertical-align:top">
-                                        <papertitle><big>Smart Access System
-                                        </papertitle></big>
-                                        <br>
-                                        <p><em><a href="https://github.com/sh7vashrestha/SmartAccessSystem"
-                                                    target="_blank">[code]</a>
-                                        <p>
-                                            <strong>Minor Project</strong><br>
-                                        <ul>
-                                            <li>Objective: Develop an RFID-based door access control system with smoke detection and automatic light control.
-                                            </li>
-                                            <li>Technology: Utilizes ESP-32 microcontroller, RFID for access, and Wi-Fi for phone integration.
-                                            </li>
-                                            <li>Features: Includes smoke detection for safety and an automatic light opener triggered by RFID.
-                                            </li>
-                                            <li>Benefits: Enhances security, safety, and energy efficiency through smart access and monitoring
-                                            </li>
-                                        </ul>
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="padding:20px;width:25%;vertical-align:middle">
-                                        <div class="one">
-                                            <img src='images/RoboticArm.png' width="150">
-                                        </div>
-                                    </td>
-                                    <td style="padding:20px;width:75%;vertical-align:top">
-                                        <papertitle><big>ROBOTIC ARM
-                                        </papertitle></big>
-                                        <br>
-                                        <p><em><a href="https://github.com/WRCRoboticsClub/robotics-arm?tab=readme-ov-file"
-                                                    target="_blank">[code]</a>
-                                        <p>
-                                            <strong>1<sup>st</sup> in Project Demonstration, Mechtrix 2022</strong><br>
-                                            
-                                        <ul>
-                                            <li>
-
-                                                Purpose: Design a robotic arm for performing hazardous tasks, freeing human workers for other duties.
-                                            </li>
-                                            <li>
-
-                                                Objectives: Build a versatile robotic arm for complex tasks and ensure ease of control for operators with limited experience.
-                                            </li>
-                                            <li>
-
-                                                Materials Used: MG 966R Servo Motor, SG 90 Servo Motor, Arduino, Bluetooth Module, Camera Module.
-                                            </li>
-                                            <li>
-
-                                                Capabilities: Mimic hand gestures, classify objects using AI, and perform pick-and-place tasks like industrial robots.
-                                            </li>
-                                        </ul>
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="padding:20px;width:25%;vertical-align:middle">
-                                        <div class="one">
-                                            <img src='images/WeatherLoRa.gif' width="150">
-                                        </div>
-                                    </td>
-                                    <td style="padding:20px;width:75%;vertical-align:top">
-                                        <papertitle><big>High Altitude Weather Forecasting using LoRa and Machine Learning
-                                        </papertitle></big>
-                                        <br>
-                                        <p><em><a href="https://github.com/SulavGaire/Weather-prediction"
-                                                    target="_blank">[code]</a> </em></p>
-                                        <p>Project Demonstration, LOCUS<br>
-                                        <ul>
-                                            <li> Project Goal: Develop a low-cost, real-time weather forecasting system
-                                                for high-altitude regions using LoRa technology and XGBoost machine
-                                                learning.
-
-                                            </li>
-                                            <li> LoRa Integration: Address expensive satellite communication limitations
-                                                with LoRa for cost-effective, reliable data transmission in remote
-                                                areas.
-
-                                            </li>
-                                            <li>XGBoost Implementation: Use XGBoost algorithm to predict weather
-                                                patterns from sensor data, overcoming challenges of sparse and
-                                                intermittent data typical in high-altitude regions. </li>
-                                        </ul>
-                                        </p>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td style="padding:20px;width:25%;vertical-align:middle">
-                                        <div class="one">
-                                            <img src='images/Sajilo.png' width="150">
-                                        </div>
-                                    </td>
-                                    <td style="padding:20px;width:75%;vertical-align:top">
-                                        <papertitle><big>SAJILO AMBULANCE - with triage prediction</papertitle></big>
-                                        <br>
-                                        <p><em><a href="https://github.com/sh7vashrestha/triage-GritFeatAIHackathon" target="_blank">[code]</a>
-                                            </em></p>
-                                        <p>
-                                            Gritfeat AI Hackathon: AI for health <br>
-                                        <ul>
-                                            <li>
-                                                Uber-like app for ambulance services with triage prediction features and
-                                                hospital recommendations
-                                            </li>
-                                            <li>
-                                                Input : vital signs like bood pressure, oxygen level etc
-
-                                            </li>
-                                            <li>Predicted : Triage(SVM - 70.58% accuracy), dipositation(RF - 72.05%
-                                                accuracy), and length of stay of patient in emergency ward(SVM - 86.76%
-                                                accuracy)</li>
-                                        </ul>
-                                        </p>
-                                    </td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                    <hr class="soft">
-
-                    <button style="border:0px transparent; background-color: transparent;outline:none;" type="button"
-                        class="collapsible" data-toggle="collapse" data-target="#content-blogs" id="Blogs">
-                        <heading>Blogs</heading>
-                    </button>
-                    <div id="content-blogs" class="collapse in">
-                        <table style="width:100%; border:0; border-spacing:0; border-collapse:separate; margin: auto;">
-                            <tbody>
-                                <tr>
-                                    <td style="padding:20px; width:25%; vertical-align:middle">
-                                        <div class="one">
-                                            <img src='https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-11.jpg'  width="100" alt="Apple Image">
-                                        </div>
-                                    </td>
-                                    <td style="padding:20px; width:75%; vertical-align:top">
-                                        <papertitle><big>Apple: The Trendsetter</big></papertitle><br>
-                                        <p><em><a href="https://forefronttechno.wordpress.com/2020/07/02/apple-the-trend-setter/" target="_blank">[Read More]</a></em></p>
-                                        <p><em>July 1, 2020</em></p>
-                                        <p><em>How Apple is setting the path and other companies are following Apple's footsteps.</em></p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="padding:20px; width:25%; vertical-align:middle">
-                                        <div class="one">
-                                            <img src='https://forefronttechno.wordpress.com/wp-content/uploads/2020/07/1.jpg?w=120' width="100" alt="Google Pixel Image">
-                                            
-                                        </div>
-                                    </td>
-                                    <td style="padding:20px; width:75%; vertical-align:top">
-                                        <papertitle><big>Google Pixel: State of the art software meets the mediocre hardware</big></papertitle><br>
-                                        <p><em><a href="https://forefronttechno.wordpress.com/2020/07/01/google-pixel-state-of-the-art-software-meets-the-mediocre-hardware/" target="_blank">[Read More]</a></em></p>
-                                        <p><em>July 1, 2020</em></p>
-                                        <p><em>Google's problem of ordinary hardware combined with extraordinary software.</em></p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="padding:20px; width:25%; vertical-align:middle">
-                                        <div class="one">
-                                            <img src='https://forefronttechno.wordpress.com/wp-content/uploads/2020/05/74545.jpg?w=747' width="150" alt="Tesla Image">
-                                        </div>
-                                    </td>
-                                    <td style="padding:20px; width:75%; vertical-align:top">
-                                        <papertitle><big>Tesla: Future of world’s Transportation?</big></papertitle><br>
-                                        <p><em><a href="https://forefronttechno.wordpress.com/2020/05/11/tesla-future-of-worlds-transportation/" target="_blank">[Read More]</a></em></p>
-                                        <p><em>May 11, 2020</em></p>
-                                        <p><em>Rise of Tesla and its impact on the world and its economy.</em></p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="padding:20px; width:25%; vertical-align:middle">
-                                        <div class="one">
-                                            <img src='https://forefronttechno.wordpress.com/wp-content/uploads/2020/05/1235.png?w=300' width="150" alt="Zoom Image">
-                                        </div>
-                                    </td>
-                                    <td style="padding:20px; width:75%; vertical-align:top">
-                                        <papertitle><big>Rise of Zoom</big></papertitle><br>
-                                        <p><em><a href="https://forefronttechno.wordpress.com/2020/05/10/rise-of-zoom/" target="_blank">[Read More]</a></em></p>
-                                        <p><em>May 10, 2020</em></p>
-                                        <p><em>Rise of Zoom and its impact during COVID times.</em></p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="padding:20px; width:25%; vertical-align:middle">
-                                        <div class="one">
-                                            <img src='https://forefronttechno.wordpress.com/wp-content/uploads/2020/05/454.jpg?w=328' width="150" alt="Smartphone Image">
-                                        </div>
-                                    </td>
-                                    <td style="padding:20px; width:75%; vertical-align:top">
-                                        <papertitle><big>Future of Smartphone</big></papertitle><br>
-                                        <p><em><a href="https://forefronttechno.wordpress.com/2020/05/10/future-of-smartphones/" target="_blank">[Read More]</a></em></p>
-                                        <p><em>May 10, 2020</em></p>
-                                        <p><em>Characteristics of smartphones that will be developed in the future.</em></p>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        
-                    </div>
-                </td>
-
-            </tr>
-            <tr>
-                <td>
-                    <p></p>
-                </td>
-            </tr>
-
-    </table>
-
-    <div align="center">
-        <table>
-            <tr>
-                <td>
-                    <p align="center" style="padding: 2px;">
-                        <a href="data/Shiva_CV.pdf" style="padding-left:30px ;" target="_blank"> <img src="images/cv.png"
-                                    height="30rem"></a>
-                            &nbsp; <a href="https://github.com/sh7vashrestha" style="padding-left:30px ;" target="_blank"><img src="images/github.png"
-                                    height="30rem"></a>
-                            &nbsp; <a href="https://www.instagram.com/sh7va_shrestha/" style="padding-left:30px ;" target="_blank"><img
-                                    src="images/instagram.png" height="30rem"></a>
-                            &nbsp;
-                    </p>
-                </td>
-            </tr>
-        </table>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="https://sh7vashrestha.github.io/portfolio/" target="_blank" rel="noopener" aria-label="Previous portfolio website">
+        Shiva Shrestha
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#advisor">Advisor</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#blogs">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <svg class="theme-icon sun-icon" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
+          </svg>
+          <div class="theme-toggle-slider">
+            <svg class="theme-icon moon-icon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+            </svg>
+          </div>
+        </button>
+      </div>
     </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-md-3 text-center">
+            <img src="images/ShivaProfile.png" alt="Shiva Shrestha - PhD Student in Computer Science" class="avatar">
+          </div>
+          <div class="col-md-9">
+            <h1 class="display-4 mb-3">Shiva Shrestha</h1>
+            <p class="lead mb-3">PhD Student, Computer Science<br>
+            <a class="link-subtle" href="https://www.kennesaw.edu/" target="_blank" rel="noopener">Kennesaw State University</a></p>
+            <span class="badge badge-custom">Graduate Research Assistant</span>
+            <p class="mt-4 mb-4">
+              Research interests: <strong>Edge Security</strong>, <strong>Embedded Systems</strong>, 
+              <strong>Machine Learning</strong>, <strong>LLMs for Security and Healthcare</strong>
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <a class="btn btn-primary" href="data/Shiva_CV.pdf" target="_blank" rel="noopener">
+                Resume
+              </a>
+              <a class="btn btn-outline-secondary" href="https://github.com/sh7vashrestha" target="_blank" rel="noopener">
+                GitHub
+              </a>
+              <a class="btn btn-outline-secondary" href="https://www.linkedin.com/in/sh7va/" target="_blank" rel="noopener">
+                LinkedIn
+              </a>
+              <a class="btn btn-outline-secondary" href="mailto:sshres16@students.kennesaw.edu">
+                Academic Email
+              </a>
+              <a class="btn btn-outline-secondary" href="mailto:sh7vashrestha@gmail.com">
+                Personal Email
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <div class="row">
+          <div class="col-lg-8">
+            <p class="lead">
+              I am a PhD student in Computer Science at Kennesaw State University, working as a Graduate Research Assistant 
+              under <a class="link-subtle" href="#advisor">Dr. Honghui Xu</a>. Previously, I completed a B.E. in 
+              <strong>Electronics, Communication and Information Engineering</strong> from 
+              <a class="link-subtle" href="https://ioepas.edu.np/" target="_blank" rel="noopener">Tribhuvan University, IOE Pashchimanchal Campus</a>, 
+              advised by <a class="link-subtle" href="https://www.researchgate.net/profile/Smita-Adhikari-2" target="_blank" rel="noopener">Asst. Prof. Smita Adhikari</a>.
+            </p>
+            <p>
+              I build end-to-end embedded and edge systems, from data collection and firmware to model training and deployment, 
+              with a focus on secure and privacy-preserving AI on resource-constrained devices.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advisor Section -->
+    <section id="advisor" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Advisor</h2>
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="h5 mb-2">
+                  <a class="link-subtle" href="https://scholar.google.com/citations?user=2Mr7jRoAAAAJ&amp;hl=zh-CN" target="_blank" rel="noopener">
+                    Dr. Honghui Xu
+                  </a>
+                </h3>
+                <p class="text-muted mb-2">Professor, Department of Information Technology, KSU</p>
+                <p class="mb-0">
+                  I work on secure and trustworthy AI topics, systems mechanisms for on-device ML, 
+                  and privacy-preserving model adaptation under Dr. Xu's guidance.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3 class="timeline-title">
+              Ph.D. in Computer Science
+              <span class="text-muted">— 
+                <a class="link-subtle" href="https://www.kennesaw.edu/ccse/degrees-programs/graduate/phd-computer-science/index.php?major=Ph.D.+in+Computer+Science+&amp;url=https%3A%2F%2Fwww.kennesaw.edu%2Fccse%2Fdegrees-programs%2Fgraduate%2Fphd-computer-science%2Findex.php" target="_blank" rel="noopener">
+                  Kennesaw State University
+                </a>
+              </span>
+            </h3>
+            <div class="timeline-meta">August 2025 to Present • Graduate Research Assistant (GRA) • Cohort 2025</div>
+            <p>Focus: Edge Security, LLMs on-device, Privacy-preserving ML</p>
+          </div>
+          <div class="timeline-item">
+            <h3 class="timeline-title">
+              B.E. in Electronics, Communication and Information Engineering
+              <span class="text-muted">— Tribhuvan University, IOE Pashchimanchal Campus</span>
+            </h3>
+            <div class="timeline-meta">2019 to 2024 • <strong>82.32%</strong> • Top of Faculty</div>
+            <p>Positions: Event coordinator (Battle for Speed), Core member (Robotics Club, Cultural Club)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Publications</h2>
+        
+        <!-- Featured Publications -->
+        <div class="row g-4 mb-5">
+          <div class="col-md-6">
+            <div class="card publication-card">
+              <div class="card-body">
+                <h3 class="publication-title">
+                  <a class="link-subtle" href="https://www.sciopen.com/article/10.26599/TST.2025.9010130" target="_blank" rel="noopener">
+                    KDLLM: Knowledge-Distilled Large Language Model for Efficient Medical QA
+                  </a>
+                </h3>
+                <div class="publication-venue">Tsinghua Science and Technology, 2025</div>
+                <p class="publication-authors">
+                  <strong>Shiva Shrestha</strong>, Honghui Xu, Zongxing Xie, Daehee Seo, Yongjoon Joe, Wonbin Kim, Yingshu Li
+                </p>
+                <a class="btn btn-sm btn-outline-primary" href="https://www.sciopen.com/article/10.26599/TST.2025.9010130" target="_blank" rel="noopener">
+                  Paper
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card publication-card">
+              <div class="card-body">
+                <h3 class="publication-title">
+                  <a class="link-subtle" href="https://arxiv.org/abs/2509.09097" target="_blank" rel="noopener">
+                    DP-FedLoRA: Privacy-Enhanced Federated Fine-Tuning for On-Device LLMs
+                  </a>
+                </h3>
+                <div class="publication-venue">arXiv preprint, Sept 2025</div>
+                <p class="publication-authors">
+                  Honghui Xu, <strong>Shiva Shrestha</strong>, Wei Chen, Zhiyuan Li, Zhipeng Cai
+                </p>
+                <a class="btn btn-sm btn-outline-primary" href="https://arxiv.org/abs/2509.09097" target="_blank" rel="noopener">
+                  Paper
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Earlier Publications -->
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="card publication-card">
+              <div class="card-body">
+                <h3 class="publication-title">
+                  Automated Waste Sorting with Delta Arm and YOLOv8 Detection
+                </h3>
+                <div class="publication-venue">IRO Journal, 2024</div>
+                <p class="publication-authors">
+                  Prateek Paudel*, Samman Shrestha*, <strong>Shiva Shrestha*</strong>, Sudarshan Gurung*, Smita Adhikari
+                </p>
+                <a class="btn btn-sm btn-outline-primary" href="https://doi.org/10.36548/jaicn.2024.3.004" target="_blank" rel="noopener">
+                  Paper
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card publication-card">
+              <div class="card-body">
+                <h3 class="publication-title">
+                  Deep Learning for Waste Management: Leveraging YOLO for Accurate Waste Classification
+                </h3>
+                <div class="publication-venue">15th IOE Graduate Conference, 2024</div>
+                <p class="publication-authors">
+                  <strong>Shiva Shrestha*</strong>, Samman Shrestha*, Prateek Paudel*, Sudarshan Gurung*, Sulav Gairee, Smita Adhikari
+                </p>
+                <a class="btn btn-sm btn-outline-primary" href="http://conference.ioe.edu.np/publications/ioegc15/IOEGC-15-004-A1-4-61.pdf" target="_blank" rel="noopener">
+                  Paper
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">Selected Projects</h2>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100">
+              <img src="images/Deltaarm.gif" class="card-img-top" alt="Delta Arm robotic waste classification system">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title">Delta Arm Waste Classifier</h3>
+                <p class="flex-grow-1">Robotic delta arm integrated with YOLOv8 for sorting categories: Bio, Paper, Plastic, Metal. mAP@50: 0.9825.</p>
+                <a class="btn btn-outline-primary btn-sm" href="https://github.com/sh7vashrestha/DeltaArm" target="_blank" rel="noopener">Code</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100">
+              <img src="images/SmartHome.gif" class="card-img-top" alt="Smart Access System with RFID and automation">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title">Smart Access System</h3>
+                <p class="flex-grow-1">ESP-32 RFID access with smoke detection, automatic lights and phone integration.</p>
+                <a class="btn btn-outline-primary btn-sm" href="https://github.com/sh7vashrestha/SmartAccessSystem" target="_blank" rel="noopener">Code</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100">
+              <img src="images/RoboticArm.png" class="card-img-top" alt="Robotic arm for gesture mimicking and AI classification">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title">Robotic Arm</h3>
+                <p class="flex-grow-1">Gesture mimic, AI classification and pick-and-place, first place at Mechtrix 2022.</p>
+                <a class="btn btn-outline-primary btn-sm" href="https://github.com/WRCRoboticsClub/robotics-arm?tab=readme-ov-file" target="_blank" rel="noopener">Code</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100">
+              <img src="images/WeatherLoRa.gif" class="card-img-top" alt="High altitude weather monitoring system using LoRa">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title">High Altitude Weather via LoRa and ML</h3>
+                <p class="flex-grow-1">LoRa telemetry with XGBoost for forecasting in remote regions.</p>
+                <a class="btn btn-outline-primary btn-sm" href="https://github.com/SulavGaire/Weather-prediction" target="_blank" rel="noopener">Code</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100">
+              <img src="images/Sajilo.png" class="card-img-top" alt="Sajilo Ambulance triage prediction system">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title">Sajilo Ambulance: Triage Prediction</h3>
+                <p class="flex-grow-1">Ambulance dispatch with SVM and RF based triage and outcomes prediction.</p>
+                <a class="btn btn-outline-primary btn-sm" href="https://github.com/sh7vashrestha/triage-GritFeatAIHackathon" target="_blank" rel="noopener">Code</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3 class="timeline-title">Graduate Research Assistant, Kennesaw State University</h3>
+            <div class="timeline-meta">2025 to Present • Advisor: <a class="link-subtle" href="#advisor">Dr. Honghui Xu</a></div>
+            <ul>
+              <li>Secure and privacy-preserving LLMs on edge devices, systems mechanisms for on-device ML</li>
+              <li>Federated fine-tuning using LoRA with differential privacy for resource constrained deployments</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <h3 class="timeline-title">Electronics Engineer, Yarsa Tech, Nepal</h3>
+            <div class="timeline-meta">May 2024 to Aug 2024</div>
+            <ul>
+              <li>ESP8266 audio system with SPI flash and DAC, STM32 interactive toy platform</li>
+              <li>Cloud printing using Raspberry Pi, CUPS and MQTT, automated barcode printing</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <h3 class="timeline-title">Robotics Club, IOE Pashchimanchal Campus</h3>
+            <div class="timeline-meta">2021 to 2023 • Core member, Design Transformer</div>
+            <ul>
+              <li>Graphics and branding, PCB design and embedded programming training</li>
+              <li>Micromouse, FPP drone, battlebot and robotic arm projects, national level events</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blogs Section -->
+    <section id="blogs" class="section">
+      <div class="container">
+        <h2 class="section-title">Blogs</h2>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100">
+              <img src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-11.jpg" class="card-img-top" alt="Apple iPhone representing innovation and trendsetting">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title">Apple: The Trendsetter</h3>
+                <p class="text-muted mb-2">July 1, 2020</p>
+                <p class="flex-grow-1">Exploring Apple's influence on technology trends and consumer behavior in the modern tech landscape.</p>
+                <a class="btn btn-outline-primary btn-sm" href="https://forefronttechno.wordpress.com/2020/07/02/apple-the-trend-setter/" target="_blank" rel="noopener">Read</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100">
+              <img src="https://forefronttechno.wordpress.com/wp-content/uploads/2020/07/1.jpg?w=120" class="card-img-top" alt="Google Pixel smartphone showcasing software optimization">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title">Google Pixel: Software versus Hardware</h3>
+                <p class="text-muted mb-2">July 1, 2020</p>
+                <p class="flex-grow-1">Analysis of Google's approach to smartphone development, balancing software innovation with hardware capabilities.</p>
+                <a class="btn btn-outline-primary btn-sm" href="https://forefronttechno.wordpress.com/2020/07/01/google-pixel-state-of-the-art-software-meets-the-mediocre-hardware/" target="_blank" rel="noopener">Read</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100">
+              <img src="https://forefronttechno.wordpress.com/wp-content/uploads/2020/05/74545.jpg?w=747" class="card-img-top" alt="Tesla electric vehicle representing the future of transportation">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title">Tesla: Future of Transportation?</h3>
+                <p class="text-muted mb-2">May 11, 2020</p>
+                <p class="flex-grow-1">Examining Tesla's impact on the automotive industry and the transition to sustainable transportation.</p>
+                <a class="btn btn-outline-primary btn-sm" href="https://forefronttechno.wordpress.com/2020/05/11/tesla-future-of-worlds-transportation/" target="_blank" rel="noopener">Read</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100">
+              <img src="https://forefronttechno.wordpress.com/wp-content/uploads/2020/05/1235.png?w=300" class="card-img-top" alt="Zoom video conferencing platform during pandemic era">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title">Rise of Zoom</h3>
+                <p class="text-muted mb-2">May 10, 2020</p>
+                <p class="flex-grow-1">How Zoom became essential during the pandemic and transformed remote communication worldwide.</p>
+                <a class="btn btn-outline-primary btn-sm" href="https://forefronttechno.wordpress.com/2020/05/10/rise-of-zoom/" target="_blank" rel="noopener">Read</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100">
+              <img src="https://forefronttechno.wordpress.com/wp-content/uploads/2020/05/454.jpg?w=328" class="card-img-top" alt="Modern smartphone technology and future innovations">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title">Future of Smartphone</h3>
+                <p class="text-muted mb-2">May 10, 2020</p>
+                <p class="flex-grow-1">Predictions and analysis of upcoming smartphone technologies and their potential impact on society.</p>
+                <a class="btn btn-outline-primary btn-sm" href="https://forefronttechno.wordpress.com/2020/05/10/future-of-smartphones/" target="_blank" rel="noopener">Read</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="h5 mb-3">Get in Touch</h3>
+                <p class="mb-3">
+                  <strong>Academic Email:</strong><br>
+                  <a class="link-subtle" href="mailto:sshres16@students.kennesaw.edu">sshres16@students.kennesaw.edu</a>
+                </p>
+                <p class="mb-4">
+                  <strong>Personal Email:</strong><br>
+                  <a class="link-subtle" href="mailto:sh7vashrestha@gmail.com">sh7vashrestha@gmail.com</a>
+                </p>
+                <div class="d-flex gap-3 footer-logo">
+                  <a href="data/Shiva_CV.pdf" target="_blank" rel="noopener" aria-label="Download CV">
+                    <img src="images/cv.png" alt="CV">
+                  </a>
+                  <a href="https://github.com/sh7vashrestha" target="_blank" rel="noopener" aria-label="GitHub profile">
+                    <img src="images/github.png" alt="GitHub">
+                  </a>
+                  <a href="https://www.instagram.com/sh7va_shrestha/" target="_blank" rel="noopener" aria-label="Instagram profile">
+                    <img src="images/instagram.png" alt="Instagram">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <p class="text-muted mb-0">
+        © <span id="currentYear"></span> Shiva Shrestha • Built with Bootstrap 5
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script>
+    // Theme management
+    const themeToggle = document.getElementById('themeToggle');
+    const currentTheme = localStorage.getItem('theme') || 'light';
     
+    // Set initial theme
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    
+    // Theme toggle functionality
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
 
+    // Update current year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const navbarHeight = document.querySelector('.navbar').offsetHeight;
+          const targetPosition = target.offsetTop - navbarHeight - 20;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Add active state to navigation on scroll
+    window.addEventListener('scroll', function() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      let currentSection = '';
+      const navbarHeight = document.querySelector('.navbar').offsetHeight;
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - navbarHeight - 100;
+        const sectionBottom = sectionTop + section.offsetHeight;
+        if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionBottom) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + currentSection) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Navbar background opacity on scroll
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      
+      if (window.scrollY > 50) {
+        if (currentTheme === 'dark') {
+          navbar.style.backgroundColor = 'rgba(15, 23, 42, 0.98)';
+        } else {
+          navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+        }
+      } else {
+        if (currentTheme === 'dark') {
+          navbar.style.backgroundColor = 'rgba(15, 23, 42, 0.95)';
+        } else {
+          navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+        }
+      }
+    });
+  </script>
 </body>
-
 </html>
