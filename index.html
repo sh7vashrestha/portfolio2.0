@@ -1,623 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shiva Shrestha — PhD CS @ Kennesaw State University</title>
-  <meta name="description" content="Shiva Shrestha — PhD student in Computer Science at Kennesaw State University, research in Edge Security, Embedded Systems, Machine Learning, and LLMs. Graduate Research Assistant under Dr. Honghui Xu." />
-  <meta name="author" content="Shiva Shrestha" />
-  <link rel="icon" href="images/ShivaLOGO.ico" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shiva Shrestha — Curriculum Vitae</title>
+  <meta name="description" content="Shiva Shrestha — PhD student, Computer Science, Kennesaw State University. Research in Edge Security, Embedded Systems, Machine Learning, LLMs.">
+  <link rel="icon" href="images/ShivaLOGO.ico">
 
-  <!-- Bootstrap (kept for grid/utilities, but heavily restyled) -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
-
-  <!-- Handwriting/Notebook fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Patrick+Hand&family=Reenie+Beanie&display=swap" rel="stylesheet" />
-
-  <style>
-    :root {
-      /* Parchment palette */
-      --ink: #1a1a1a;
-      --ink-muted: #4b4b4b;
-      --paper: #fbf7ef;          /* warm parchment */
-      --paper-edge: #e7dfcf;      /* edge shadow */
-      --line: rgba(50, 115, 220, 0.18); /* soft blue rule lines */
-      --margin-line: rgba(234, 74, 74, 0.35); /* red margin line */
-      --tape: #ffd86b;            /* sticky note tape */
-      --accent: #0ea5e9;          /* links/sketch accents */
-      --pin: #f87171;             /* pushpin */
-      --shadow: 0 10px 30px rgba(0,0,0,.12);
-      --shadow-sm: 0 4px 10px rgba(0,0,0,.08);
-    }
-
-    [data-theme="dark"] {
-      /* Night mode → chalkboard-on-kraft look */
-      --ink: #f4f4f4;
-      --ink-muted: #c9c9c9;
-      --paper: #121821;
-      --paper-edge: #0b0f15;
-      --line: rgba(255,255,255,0.06);
-      --margin-line: rgba(255,100,100,0.18);
-      --tape: #8a7d4f;
-      --accent: #38bdf8;
-      --pin: #fb7185;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      color: var(--ink);
-      font-family: 'Patrick Hand', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-      background:
-        radial-gradient(1200px 400px at 10% -10%, rgba(0,0,0,.08), transparent 35%),
-        radial-gradient(900px 400px at 110% 10%, rgba(0,0,0,.06), transparent 40%),
-        linear-gradient(0deg, var(--paper-edge), var(--paper-edge)) fixed;
-      min-height: 100vh;
-    }
-
-    /* Notebook sheet wrapper */
-    .sheet {
-      position: relative;
-      background: var(--paper);
-      border-radius: 14px;
-      box-shadow: var(--shadow);
-      margin: 110px auto 48px;
-      max-width: 1080px;
-      padding: 0;
-      overflow: hidden;
-      border: 1px solid rgba(0,0,0,.06);
-    }
-
-    /* Lined paper effect */
-    .sheet::before {
-      content: "";
-      position: absolute; inset: 0;
-      background:
-        repeating-linear-gradient(
-          to bottom,
-          transparent 0 36px,
-          var(--line) 36px 37px
-        );
-      pointer-events: none;
-    }
-
-    /* Margin line */
-    .sheet::after {
-      content: "";
-      position: absolute; top: 0; bottom: 0; left: 72px; width: 2px;
-      background: linear-gradient(var(--margin-line), var(--margin-line));
-      pointer-events: none;
-    }
-
-    /* Perforated ring holes */
-    .holes {
-      position: absolute; left: 22px; top: 24px; bottom: 24px;
-      width: 16px; display: grid; gap: 28px;
-      grid-auto-rows: 16px;
-    }
-    .holes span { width: 16px; height: 16px; border-radius: 50%; background: #d9d1c2; box-shadow: inset 0 2px 2px rgba(0,0,0,.15); }
-    [data-theme="dark"] .holes span { background: #2a3543; }
-
-    /* Tape-styled fixed navbar */
-    .navbar {
-      position: fixed; top: 14px; left: 50%; transform: translateX(-50%) rotate(-0.4deg);
-      z-index: 50; border: 0; padding: 0.35rem 0.75rem;
-      background: var(--tape); color: #222; border-radius: 8px;
-      box-shadow: var(--shadow-sm);
-      font-family: 'Caveat', cursive; font-size: 1.35rem; letter-spacing: 0.5px;
-    }
-    .navbar a { text-decoration: none; color: inherit; }
-    .nav-links { display: none; gap: 12px; align-items: center; }
-    @media (min-width: 992px) { .nav-links { display: inline-flex; } }
-
-    .brand { font-weight: 700; margin-right: 18px; display:flex; align-items:center; }
-    .nav-link { opacity: .9; border-bottom: 2px solid transparent; }
-    .nav-link:hover { border-bottom-color: rgba(0,0,0,.25); }
-
-    /* Theme toggle: real slider */
-    .toggle{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:10px;padding:4px 10px;border-radius:999px;background:var(--tape);box-shadow:var(--shadow-sm)}
-.toggle .label{font-family:'Caveat',cursive;font-size:1.1rem;line-height:1}
-.toggle .track{position:relative;width:48px;height:24px;border-radius:999px;background:rgba(0,0,0,.15);flex:0 0 auto;display:inline-block}
-.toggle .track .knob{position:absolute;top:2px;left:2px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:var(--shadow-sm);transition:transform .25s ease}
-[data-theme="dark"] .toggle .track{background:rgba(255,255,255,.22)}
-[data-theme="dark"] .toggle .track .knob{transform:translateX(24px)}
-
-    /* Content area inside sheet */
-    .paper-body { position: relative; padding: 36px 32px 42px 96px; }
-
-    /* Handwritten headings */
-    h1, h2, h3, h4, h5, h6 { font-family: 'Caveat', cursive; line-height: 1.1; color: var(--ink); }
-    h1 { font-size: 3rem; margin: 0 0 6px; }
-    h2 { font-size: 2.2rem; margin: 26px 0 12px; display: inline-block; position: relative; color: var(--ink); }
-    h2::after { content: ''; position: absolute; left: 0; right: -8px; bottom: -6px; height: 6px; background: linear-gradient(90deg, transparent 10%, var(--accent) 10% 85%, transparent 85%); transform: rotate(-1deg); }
-    h3 { font-size: 1.6rem; color: var(--ink); }
-
-    /* Body text always tracks theme ink color */
-    p, li, a, span, small { font-size: 1.05rem; color: var(--ink); }
-    .lead { font-size: 1.25rem; color: var(--ink-muted) !important; }
-
-    /* Avatar as taped polaroid */
-    .polaroid {
-      width: 180px; background: var(--paper); padding: 10px 10px 16px; border-radius: 8px; box-shadow: var(--shadow);
-      transform: rotate(-2deg);
-    }
-    .polaroid img { width: 100%; border-radius: 6px; display: block; }
-    .tape { position: relative; }
-    .tape::before {
-      content: ""; position: absolute; left: 50%; top: -12px; transform: translateX(-50%) rotate(-3deg);
-      width: 76px; height: 22px; background: var(--tape); box-shadow: var(--shadow-sm);
-      border-radius: 4px; opacity: .95;
-    }
-
-    /* Sticky buttons that look like labels */
-    .btn-ink {
-      border: 2px dashed currentColor; background: transparent; color: var(--ink);
-      padding: 6px 12px; border-radius: 10px; font-family: 'Patrick Hand';
-      transition: transform .1s ease; text-decoration: none; display: inline-block;
-    }
-    .btn-ink:hover { transform: translateY(-2px) rotate(-0.6deg); }
-
-    /* Cards → notebook scraps */
-    .card {
-      border: 1px dashed rgba(0,0,0,.25); background: var(--paper);
-      box-shadow: var(--shadow-sm); border-radius: 12px; overflow: hidden; color: var(--ink);
-    }
-    .card .card-title { font-family: 'Caveat', cursive; font-size: 1.5rem; color: var(--ink); }
-    .card .card-img-top { filter: saturate(.92) contrast(1.02); }
-
-    .text-muted, .timeline-meta { color: var(--ink-muted) !important; }
-
-    .section { margin: 20px 0 36px; }
-
-    /* Timeline pins */
-    .timeline { position: relative; margin-left: 8px; }
-    .timeline::before { content: ''; position: absolute; left: -18px; top: 4px; bottom: 0; width: 2px; background: repeating-linear-gradient(to bottom, var(--ink), var(--ink) 6px, transparent 6px, transparent 12px); opacity: .18; }
-    .timeline-item { position: relative; padding-left: 10px; margin-bottom: 20px; }
-    .timeline-item::before { content: ''; position: absolute; left: -23px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--pin); box-shadow: 0 0 0 3px rgba(0,0,0,.08); }
-    .timeline-title { font-family: 'Caveat', cursive; font-size: 1.45rem; color: var(--ink); }
-
-    /* Subtle link style like pen underline */
-    a.link-ink { color: inherit; text-decoration: none; border-bottom: 2px dotted var(--accent); }
-    a.link-ink:hover { background: linear-gradient(180deg, transparent 70%, rgba(14,165,233,.25) 0); }
-
-    /* Footer */
-    footer { text-align: center; padding: 20px 0 40px; color: var(--ink-muted); font-size: 0.95rem; }
-
-    /* Responsive tweaks */
-    @media (max-width: 768px) {
-      .paper-body { padding: 28px 18px 32px 78px; }
-      .sheet::after { left: 56px; }
-      .polaroid { width: 150px; margin-bottom: 14px; }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&amp;family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheet.css">
 </head>
-
 <body>
-  <!-- Tape-styled navbar -->
-  <nav class="navbar container-fluid d-flex align-items-center justify-content-center">
-    <div class="d-flex align-items-center" style="gap:14px;">
-      <a class="brand" href="https://sh7vashrestha.github.io/portfolio/" target="_blank" rel="noopener" aria-label="Previous portfolio website">Shiva Shrestha</a>
-      <div class="nav-links">
-        <a class="nav-link" href="#about">About</a>
-        <a class="nav-link" href="#advisor">Advisor</a>
-        <a class="nav-link" href="#education">Education</a>
-        <a class="nav-link" href="#publications">Publications</a>
-        <a class="nav-link" href="#projects">Projects</a>
-        <a class="nav-link" href="#experience">Experience</a>
-        <a class="nav-link" href="#blogs">Blogs</a>
-        <a class="nav-link" href="#contact">Contact</a>
+<div class="page">
+
+  <header class="masthead">
+    <div>
+      <h1 class="mast-name">Shiva Shrestha</h1>
+      <p class="mast-title">PhD Student · Computer Science · Kennesaw State University</p>
+      <nav class="mast-links" aria-label="Contact">
+        <a href="mailto:sshres16@students.kennesaw.edu" class="bare">sshres16@students.kennesaw.edu</a>
+        <span class="sep">·</span>
+        <a href="mailto:sh7vashrestha@gmail.com" class="bare">sh7vashrestha@gmail.com</a>
+        <span class="sep">·</span>
+        <a href="https://github.com/sh7vashrestha" target="_blank" rel="noopener" class="bare">GitHub</a>
+        <span class="sep">·</span>
+        <a href="https://www.linkedin.com/in/sh7va/" target="_blank" rel="noopener" class="bare">LinkedIn</a>
+        <span class="sep">·</span>
+        <a href="https://scholar.google.com/citations?user=8IwSr08AAAAJ&amp;hl" target="_blank" rel="noopener" class="bare">Google Scholar</a>
+        <span class="sep">·</span>
+        <a href="data/Shiva_CV.pdf" target="_blank" rel="noopener" class="bare">PDF Résumé</a>
+      </nav>
+    </div>
+    <img src="images/ShivaProfile.png" class="mast-photo" alt="Shiva Shrestha">
+  </header>
+
+  <!-- ABOUT -->
+  <section class="sec" id="about">
+    <div class="sec-head">
+      <span class="sec-label">About</span>
+      <div class="sec-rule-dark"></div>
+    </div>
+    <div class="full-body">
+      <p>PhD student in Computer Science at Kennesaw State University, working as a Graduate Research Assistant under <a href="#advisor">Dr. Honghui Xu</a>. Previously completed a B.E. in Electronics, Communication and Information Engineering from Tribhuvan University, IOE Pashchimanchal Campus — graduating at the top of the faculty — advised by <a href="https://www.researchgate.net/profile/Smita-Adhikari-2" target="_blank" rel="noopener">Asst. Prof. Smita Adhikari</a>.</p>
+      <p>I design and build end-to-end embedded and edge systems, from data collection and firmware to model training and deployment, with a sustained focus on secure and privacy-preserving AI on resource-constrained devices.</p>
+    </div>
+  </section>
+
+  <!-- ADVISOR -->
+  <section class="sec" id="advisor">
+    <div class="sec-head">
+      <span class="sec-label">Advisor</span>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="row">
+      <div class="r-left">KSU</div>
+      <div class="r-right">
+        <div class="adv-name"><a href="https://scholar.google.com/citations?user=2Mr7jRoAAAAJ&amp;hl=zh-CN" target="_blank" rel="noopener">Dr. Honghui Xu</a></div>
+        <div class="adv-role">Professor · Dept. of Information Technology</div>
+        <p class="adv-note">Research topics: secure and trustworthy AI, systems mechanisms for on-device ML, and privacy-preserving model adaptation for edge deployments.</p>
       </div>
-      <button id="themeToggle" class="toggle" aria-pressed="false" title="Toggle theme">
-        <span class="label" id="toggleLabel">Light</span>
-        <span class="track" aria-hidden="true">
-          <span class="knob" aria-hidden="true"></span>
-        </span>
-      </button>
     </div>
-  </nav>
+  </section>
 
-  <!-- Notebook sheet -->
-  <div class="sheet">
-    <div class="holes" aria-hidden="true">
-      <span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span>
+  <!-- EDUCATION -->
+  <section class="sec" id="education">
+    <div class="sec-head">
+      <span class="sec-label">Education</span>
+      <div class="sec-rule-dark"></div>
     </div>
-
-    <div class="paper-body">
-      <!-- Hero / Header -->
-      <header id="top" class="mb-4">
-        <div class="row g-4 align-items-center">
-          <div class="col-md-3 text-center tape">
-            <div class="polaroid">
-              <img src="images/ShivaProfile.png" alt="Shiva Shrestha - PhD Student in Computer Science" />
-              <div style="text-align:center; margin-top:6px; font-family:'Reenie Beanie', cursive; font-size:1.2rem; opacity:.9;">Shiva — 2025 ✍️</div>
-            </div>
-          </div>
-          <div class="col-md-9">
-            <h1>Shiva Shrestha</h1>
-            <p class="lead mb-2">PhD Student, Computer Science<br />
-              <a class="link-ink" href="https://www.kennesaw.edu/" target="_blank" rel="noopener">Kennesaw State University</a>
-            </p>
-            <div class="mb-2" style="font-family:'Caveat', cursive; font-size:1.25rem;">Graduate Research Assistant</div>
-            <p class="mb-3">Research interests: <strong>Edge Security</strong>, <strong>Embedded Systems</strong>, <strong>Machine Learning</strong>, <strong>LLMs for Security and Healthcare</strong></p>
-            <div class="d-flex flex-wrap gap-2">
-              <a class="btn-ink" href="data/Shiva_CV.pdf" target="_blank" rel="noopener">📄 Resume</a>
-              <a class="btn-ink" href="https://github.com/sh7vashrestha" target="_blank" rel="noopener">💻 GitHub</a>
-              <a class="btn-ink" href="https://www.linkedin.com/in/sh7va/" target="_blank" rel="noopener">🔗 LinkedIn</a>
-              <a class="btn-ink" href="mailto:sshres16@students.kennesaw.edu">✉️ Academic Email</a>
-              <a class="btn-ink" href="mailto:sh7vashrestha@gmail.com">✉️ Personal Email</a>
-              <a class="btn-ink" href="https://scholar.google.com/citations?user=8IwSr08AAAAJ&hl">🏛️ Google Scholar</a>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <!-- About -->
-      <section id="about" class="section">
-        <h2>About</h2>
-        <div class="row">
-          <div class="col-lg-9">
-            <p class="lead">
-              I am a PhD student in Computer Science at Kennesaw State University, working as a Graduate Research Assistant under <a class="link-ink" href="#advisor">Dr. Honghui Xu</a>. Previously, I completed a B.E. in <strong>Electronics, Communication and Information Engineering</strong> from <a class="link-ink" href="https://ioepas.edu.np/" target="_blank" rel="noopener">Tribhuvan University, IOE Pashchimanchal Campus</a>, advised by <a class="link-ink" href="https://www.researchgate.net/profile/Smita-Adhikari-2" target="_blank" rel="noopener">Asst. Prof. Smita Adhikari</a>.
-            </p>
-            <p>I build end-to-end embedded and edge systems, from data collection and firmware to model training and deployment, with a focus on secure and privacy-preserving AI on resource-constrained devices.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Advisor -->
-      <section id="advisor" class="section">
-        <h2>Advisor</h2>
-        <div class="row">
-          <div class="col-lg-9">
-            <div class="card p-3">
-              <h3 class="mb-1"><a class="link-ink" href="https://scholar.google.com/citations?user=2Mr7jRoAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Dr. Honghui Xu</a></h3>
-              <p class="mb-2" style="color:var(--ink-muted);">Professor, Department of Information Technology, KSU</p>
-              <p class="mb-0">I work on secure and trustworthy AI topics, systems mechanisms for on-device ML, and privacy-preserving model adaptation under Dr. Xu's guidance.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Education -->
-      <section id="education" class="section">
-        <h2>Education</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-title">Ph.D. in Computer Science — <a class="link-ink" href="https://www.kennesaw.edu/ccse/degrees-programs/graduate/phd-computer-science/index.php?major=Ph.D.+in+Computer+Science+&url=https%3A%2F%2Fwww.kennesaw.edu%2Fccse%2Fdegrees-programs%2Fgraduate%2Fphd-computer-science%2Findex.php" target="_blank" rel="noopener">Kennesaw State University</a></div>
-            <div class="timeline-meta">August 2025 to Present • Graduate Research Assistant (GRA) • Cohort 2025</div>
-            <p>Focus: Edge Security, LLMs on-device, Privacy-preserving ML</p>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-title">B.E. in Electronics, Communication and Information Engineering — Tribhuvan University, IOE Pashchimanchal Campus</div>
-            <div class="timeline-meta">2019 to 2024 • <strong>82.32%</strong> • Top of Faculty</div>
-            <p>Positions: Event coordinator (Battle for Speed), Core member (Robotics Club, Cultural Club)</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Publications -->
-      <section id="publications" class="section">
-        <h2>Publications</h2>
-        <div class="row g-3 mb-3">
-          <div class="col-md-6">
-            <div class="card p-3 h-100">
-              <h3 class="card-title"><a class="link-ink" href="https://www.sciopen.com/article/10.26599/TST.2025.9010130" target="_blank" rel="noopener">KDLLM: Knowledge-Distilled Large Language Model for Efficient Medical QA</a></h3>
-              <div style="color:var(--accent); font-weight:600;">Tsinghua Science and Technology, 2025</div>
-              <p style="color:var(--ink-muted);"><strong>Shiva Shrestha</strong>, Honghui Xu, Zongxing Xie, Daehee Seo, Yongjoon Joe, Wonbin Kim, Yingshu Li</p>
-              <a class="btn-ink" href="https://www.sciopen.com/article/10.26599/TST.2025.9010130" target="_blank" rel="noopener">Read paper</a>
-            </div>
-          </div>
-          <div class="col-md-6">
-  <div class="card p-3 h-100">
-    <h3 class="card-title">
-      <a class="link-ink" href="https://arxiv.org/abs/2509.09097" target="_blank" rel="noopener">
-        DP-FedLoRA: Privacy-Enhanced Federated Fine-Tuning for On-Device LLMs
-      </a>
-    </h3>
-    <div style="color: var(--accent); font-weight:600;">arXiv preprint, Sept 2025</div>
-    <p style="color:var(--ink-muted);">
-      Honghui Xu, <strong>Shiva Shrestha</strong>, Wei Chen, Zhiyuan Li, Zhipeng Cai
-    </p>
-
-    <!-- Award inside publication -->
-    <div style="
-      margin-top: 6px;
-      padding: 8px 12px;
-      border-left: 4px solid var(--accent);
-      background: rgba(14,165,233,0.10);
-      border-radius: 6px;
-      font-size: 1.05rem;">
-      🏆 <strong>ICDM 2025 — Best Paper Runner-Up Award</strong><br>
-      <a class="link-ink" href="https://icdm.zhonghuapu.com/Awards/Awards.shtml" target="_blank" rel="noopener">
-        Official ICDM Awards Page
-      </a>
+    <div class="row">
+      <div class="r-left">Aug 2025 –<br>Present</div>
+      <div class="r-right">
+        <div class="edu-deg">Ph.D. in Computer Science</div>
+        <div class="edu-inst">Kennesaw State University</div>
+        <p class="edu-note">Graduate Research Assistant · Cohort 2025<br>Focus: Edge Security, LLMs on-device, Privacy-preserving Machine Learning</p>
+      </div>
     </div>
+    <div class="row">
+      <div class="r-left">2019 – 2024</div>
+      <div class="r-right">
+        <div class="edu-deg">B.E. in Electronics, Communication and Information Engineering</div>
+        <div class="edu-inst">Tribhuvan University, IOE Pashchimanchal Campus</div>
+        <p class="edu-note">82.32% <span class="edu-grade">Top of Faculty</span><br>Event coordinator, Battle for Speed · Core member, Robotics Club &amp; Cultural Club</p>
+      </div>
+    </div>
+  </section>
 
-    <a class="btn-ink mt-2" href="https://arxiv.org/abs/2509.09097" target="_blank" rel="noopener">
-      Read paper
-    </a>
-  </div>
-</div>
+  <!-- PUBLICATIONS -->
+  <section class="sec" id="publications">
+    <div class="sec-head">
+      <span class="sec-label">Publications</span>
+      <div class="sec-rule-dark"></div>
+    </div>
+    <div class="row">
+      <div class="r-left">2025</div>
+      <div class="r-right">
+        <div class="pub-venue">Tsinghua Science and Technology</div>
+        <div class="pub-title"><a href="https://www.sciopen.com/article/10.26599/TST.2025.9010130" target="_blank" rel="noopener">KDLLM: Knowledge-Distilled Large Language Model for Efficient Medical QA</a></div>
+        <div class="pub-authors"><strong>Shiva Shrestha</strong>, Honghui Xu, Zongxing Xie, Daehee Seo, Yongjoon Joe, Wonbin Kim, Yingshu Li</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="r-left">2025</div>
+      <div class="r-right">
+        <div class="pub-venue">arXiv Preprint · September 2025</div>
+        <div class="pub-title"><a href="https://arxiv.org/abs/2509.09097" target="_blank" rel="noopener">DP-FedLoRA: Privacy-Enhanced Federated Fine-Tuning for On-Device LLMs</a></div>
+        <div class="pub-authors">Honghui Xu, <strong>Shiva Shrestha</strong>, Wei Chen, Zhiyuan Li, Zhipeng Cai</div>
+        <div class="pub-award"><a href="https://icdm.zhonghuapu.com/Awards/Awards.shtml" target="_blank" rel="noopener" class="award-link">ICDM 2025 · Best Paper Runner-Up Award</a></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="r-left">2024</div>
+      <div class="r-right">
+        <div class="pub-venue">IRO Journal</div>
+        <div class="pub-title"><a href="https://doi.org/10.36548/jaicn.2024.3.004" target="_blank" rel="noopener">Automated Waste Sorting with Delta Arm and YOLOv8 Detection</a></div>
+        <div class="pub-authors">Prateek Paudel*, Samman Shrestha*, <strong>Shiva Shrestha*</strong>, Sudarshan Gurung*, Smita Adhikari</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="r-left">2024</div>
+      <div class="r-right">
+        <div class="pub-venue">15th IOE Graduate Conference</div>
+        <div class="pub-title"><a href="http://conference.ioe.edu.np/publications/ioegc15/IOEGC-15-004-A1-4-61.pdf" target="_blank" rel="noopener">Deep Learning for Waste Management: Leveraging YOLO for Accurate Waste Classification</a></div>
+        <div class="pub-authors"><strong>Shiva Shrestha*</strong>, Samman Shrestha*, Prateek Paudel*, Sudarshan Gurung*, Sulav Gairee, Smita Adhikari</div>
+      </div>
+    </div>
+  </section>
 
-        </div>
-        <div class="row g-3">
-          <div class="col-md-6">
-            <div class="card p-3 h-100">
-              <h3 class="card-title">Automated Waste Sorting with Delta Arm and YOLOv8 Detection</h3>
-              <div style="color:var(--accent); font-weight:600;">IRO Journal, 2024</div>
-              <p style="color:var(--ink-muted);">Prateek Paudel*, Samman Shrestha*, <strong>Shiva Shrestha*</strong>, Sudarshan Gurung*, Smita Adhikari</p>
-              <a class="btn-ink" href="https://doi.org/10.36548/jaicn.2024.3.004" target="_blank" rel="noopener">Read paper</a>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card p-3 h-100">
-              <h3 class="card-title">Deep Learning for Waste Management: Leveraging YOLO for Accurate Waste Classification</h3>
-              <div style="color:var(--accent); font-weight:600;">15th IOE Graduate Conference, 2024</div>
-              <p style="color:var(--ink-muted);"><strong>Shiva Shrestha*</strong>, Samman Shrestha*, Prateek Paudel*, Sudarshan Gurung*, Sulav Gairee, Smita Adhikari</p>
-              <a class="btn-ink" href="http://conference.ioe.edu.np/publications/ioegc15/IOEGC-15-004-A1-4-61.pdf" target="_blank" rel="noopener">Read paper</a>
-            </div>
-          </div>
-        </div>
-      </section>
+  <!-- RESEARCH INTERESTS -->
+  <section class="sec" id="interests">
+    <div class="sec-head">
+      <span class="sec-label">Research Interests</span>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="full-body">
+      <div class="inline-list">
+        <span>Edge Security</span>
+        <span>Embedded Systems</span>
+        <span>Federated Learning</span>
+        <span>Differential Privacy</span>
+        <span>On-device LLMs</span>
+        <span>Knowledge Distillation</span>
+        <span>Privacy-preserving ML</span>
+        <span>Firmware Engineering</span>
+      </div>
+    </div>
+  </section>
 
-      <!-- Projects -->
-      <section id="projects" class="section">
-        <h2>Selected Projects</h2>
-        <div class="row g-3">
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100">
-              <img src="images/Deltaarm.gif" class="card-img-top" alt="Delta Arm robotic waste classification system" />
-              <div class="card-body">
-                <h3 class="card-title">Delta Arm Waste Classifier</h3>
-                <p>Robotic delta arm integrated with YOLOv8 for sorting categories: Bio, Paper, Plastic, Metal. mAP@50: 0.9825.</p>
-                <a class="btn-ink" href="https://github.com/sh7vashrestha/DeltaArm" target="_blank" rel="noopener">Code</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100">
-              <img src="images/SmartHome.gif" class="card-img-top" alt="Smart Access System with RFID and automation" />
-              <div class="card-body">
-                <h3 class="card-title">Smart Access System</h3>
-                <p>ESP-32 RFID access with smoke detection, automatic lights and phone integration.</p>
-                <a class="btn-ink" href="https://github.com/sh7vashrestha/SmartAccessSystem" target="_blank" rel="noopener">Code</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100">
-              <img src="images/RoboticArm.png" class="card-img-top" alt="Robotic arm for gesture mimicking and AI classification" />
-              <div class="card-body">
-                <h3 class="card-title">Robotic Arm</h3>
-                <p>Gesture mimic, AI classification and pick-and-place, first place at Mechtrix 2022.</p>
-                <a class="btn-ink" href="https://github.com/WRCRoboticsClub/robotics-arm?tab=readme-ov-file" target="_blank" rel="noopener">Code</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100">
-              <img src="images/WeatherLoRa.gif" class="card-img-top" alt="High altitude weather monitoring system using LoRa" />
-              <div class="card-body">
-                <h3 class="card-title">High Altitude Weather via LoRa and ML</h3>
-                <p>LoRa telemetry with XGBoost for forecasting in remote regions.</p>
-                <a class="btn-ink" href="https://github.com/SulavGaire/Weather-prediction" target="_blank" rel="noopener">Code</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100">
-              <img src="images/Sajilo.png" class="card-img-top" alt="Sajilo Ambulance triage prediction system" />
-              <div class="card-body">
-                <h3 class="card-title">Sajilo Ambulance: Triage Prediction</h3>
-                <p>Ambulance dispatch with SVM and RF based triage and outcomes prediction.</p>
-                <a class="btn-ink" href="https://github.com/sh7vashrestha/triage-GritFeatAIHackathon" target="_blank" rel="noopener">Code</a>
-              </div>
-            </div>
-          </div>
-          <!-- Yarsa Tech Projects -->
+  <!-- PROJECTS -->
+  <section class="sec" id="projects">
+    <div class="sec-head">
+      <span class="sec-label">Projects</span>
+      <div class="sec-rule-dark"></div>
+    </div>
+    <div class="row">
+      <div class="r-left">2025</div>
+      <div class="r-right">
+        <div class="proj-name">AI-Powered Autonomous UAV Damage Assessment</div>
+        <p class="proj-desc">Autonomous UAV system for post-disaster building inspection using onboard vision and navigation to identify structural damage and label buildings using FEMA-aligned damage assessment categories for faster response and recovery triage.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="r-left">2023 – 24</div>
+      <div class="r-right">
+        <div class="proj-name">Delta Arm Waste Classifier</div>
+        <p class="proj-desc">Robotic delta arm with YOLOv8 object detection for sorting Bio, Paper, Plastic, and Metal waste. Achieved mAP@50 of 0.9825 on a custom labelled dataset.</p>
+        <a href="https://github.com/sh7vashrestha/DeltaArm" class="proj-link" target="_blank" rel="noopener">github.com/sh7vashrestha/DeltaArm</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="r-left">2023</div>
+      <div class="r-right">
+        <div class="proj-name">Smart Access System</div>
+        <p class="proj-desc">ESP-32 RFID-based access control with smoke detection, automatic lighting, and mobile phone integration.</p>
+        <a href="https://github.com/sh7vashrestha/SmartAccessSystem" class="proj-link" target="_blank" rel="noopener">github.com/sh7vashrestha/SmartAccessSystem</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="r-left">2022</div>
+      <div class="r-right">
+        <div class="proj-name">Robotic Arm <span class="project-badge">— 1st place, Mechtrix 2022</span></div>
+        <p class="proj-desc">Six-axis robotic arm with gesture mirroring, AI-based object classification, and autonomous pick-and-place.</p>
+        <a href="https://github.com/WRCRoboticsClub/robotics-arm" class="proj-link" target="_blank" rel="noopener">github.com/WRCRoboticsClub/robotics-arm</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="r-left">2023</div>
+      <div class="r-right">
+        <div class="proj-name">High-Altitude Weather Prediction via LoRa</div>
+        <p class="proj-desc">LoRa telemetry pipeline with XGBoost forecasting for weather prediction in remote high-altitude regions without cellular coverage.</p>
+        <a href="https://github.com/SulavGaire/Weather-prediction" class="proj-link" target="_blank" rel="noopener">github.com/SulavGaire/Weather-prediction</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="r-left">2023</div>
+      <div class="r-right">
+        <div class="proj-name">Sajilo Ambulance: Triage Prediction</div>
+        <p class="proj-desc">Ambulance dispatch system with SVM and Random Forest classifiers for patient triage and outcomes prediction. Built at GritFeat AI Hackathon.</p>
+        <a href="https://github.com/sh7vashrestha/triage-GritFeatAIHackathon" class="proj-link" target="_blank" rel="noopener">github.com/sh7vashrestha/triage-GritFeatAIHackathon</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="r-left">2024</div>
+      <div class="r-right">
+        <div class="proj-name">STM32-Based Multilingual Toy</div>
+        <p class="proj-desc">Interactive educational toy on STM32 with onboard Flash, DAC output, and audio amplifier — plays stories and songs in English and Nepali.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="r-left">2024</div>
+      <div class="r-right">
+        <div class="proj-name">Smart Cloud Printer (MQTT + Raspberry Pi)</div>
+        <p class="proj-desc">Converts legacy printers into IoT-enabled devices via Raspberry Pi, CUPS, and MQTT for remote job management and monitoring.</p>
+      </div>
+    </div>
+  </section>
 
-<div class="col-md-6 col-lg-4">
-  <div class="card h-100">
-    <img src="images/toy.gif" class="card-img-top" alt="STM32-based multilingual toy with audio playback" />
-    <div class="card-body">
-      <h3 class="card-title">STM32-Based Multilingual Toy</h3>
+  <!-- EXPERIENCE -->
+  <section class="sec" id="experience">
+    <div class="sec-head">
+      <span class="sec-label">Experience</span>
+      <div class="sec-rule-dark"></div>
+    </div>
+    <div class="row">
+      <div class="r-left">Apr 2025 –<br>Present</div>
+      <div class="r-right">
+        <div class="exp-role">Graduate Research Assistant</div>
+        <div class="exp-org">Kennesaw State University · Marietta, GA</div>
+        <ul class="exp-pts">
+          <li>Secure and privacy-preserving LLMs on edge devices; systems mechanisms for on-device ML</li>
+          <li>Federated fine-tuning using LoRA with differential privacy for resource-constrained deployments</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="r-left">Mar – Aug<br>2024</div>
+      <div class="r-right">
+        <div class="exp-role">Electronics Engineer</div>
+        <div class="exp-org">Yarsa Tech · Nepal</div>
+        <ul class="exp-pts">
+          <li>ESP8266 audio system with SPI flash and DAC; STM32 interactive multilingual toy platform</li>
+          <li>Cloud-connected printing pipeline using Raspberry Pi, CUPS, and MQTT; automated barcode printing</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="r-left">2021 – 2023</div>
+      <div class="r-right">
+        <div class="exp-role">Core Member &amp; Design Lead</div>
+        <div class="exp-org">Robotics Club · IOE Pashchimanchal Campus</div>
+        <ul class="exp-pts">
+          <li>Led graphics and branding; conducted PCB design and embedded programming training sessions</li>
+          <li>Built micromouse, FPP drone, battlebot, and robotic arm systems for national competitions</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <section class="sec" id="blogs">
+    <div class="sec-head">
+      <span class="sec-label">Writing</span>
+      <div class="sec-rule"></div>
+    </div>
+    <div class="row">
+      <div class="r-left">Jul 2020</div>
+      <div class="r-right">
+        <div class="blog-title"><a href="https://forefronttechno.wordpress.com/2020/07/02/apple-the-trend-setter/" target="_blank" rel="noopener">Apple: The Trendsetter</a></div>
+        <p class="blog-desc">Exploring Apple's outsized influence on technology trends and consumer behaviour.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="r-left">Jul 2020</div>
+      <div class="r-right">
+        <div class="blog-title"><a href="https://forefronttechno.wordpress.com/2020/07/01/google-pixel-state-of-the-art-software-meets-the-mediocre-hardware/" target="_blank" rel="noopener">Google Pixel: Software versus Hardware</a></div>
+        <p class="blog-desc">Analysis of Google's approach to smartphones — balancing software innovation with hardware realities.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="r-left">May 2020</div>
+      <div class="r-right">
+        <div class="blog-title"><a href="https://forefronttechno.wordpress.com/2020/05/11/tesla-future-of-worlds-transportation/" target="_blank" rel="noopener">Tesla: Future of Transportation?</a></div>
+        <p class="blog-desc">Examining Tesla's impact on the automotive industry and the transition to sustainable transportation.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="r-left">May 2020</div>
+      <div class="r-right">
+        <div class="blog-title"><a href="https://forefronttechno.wordpress.com/2020/05/10/rise-of-zoom/" target="_blank" rel="noopener">Rise of Zoom</a></div>
+        <p class="blog-desc">How Zoom became indispensable during the pandemic and transformed remote communication worldwide.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="r-left">May 2020</div>
+      <div class="r-right">
+        <div class="blog-title"><a href="https://forefronttechno.wordpress.com/2020/05/10/future-of-smartphones/" target="_blank" rel="noopener">Future of Smartphones</a></div>
+        <p class="blog-desc">Predictions and analysis of upcoming smartphone technologies and their potential societal impact.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="sec" id="contact">
+    <div class="sec-head">
+      <span class="sec-label">Contact</span>
+      <div class="sec-rule-dark"></div>
+    </div>
+    <div class="full-body">
       <p>
-        Designed and built an interactive toy using an STM32 MCU, onboard Flash,
-        DAC output, and an audio amplifier. The system plays multiple stories
-        and songs in both <strong>English</strong> and <strong>Nepali</strong>,
-        supporting high-quality audio playback from embedded memory.
+        <a href="mailto:sshres16@students.kennesaw.edu">sshres16@students.kennesaw.edu</a>
+        <span class="sep">·</span>
+        <a href="mailto:sh7vashrestha@gmail.com">sh7vashrestha@gmail.com</a>
       </p>
-      <!-- optional GitHub link if you want -->
-      <!-- <a class="btn-ink" href="#" target="_blank" rel="noopener">Code</a> -->
-    </div>
-  </div>
-</div>
-
-<div class="col-md-6 col-lg-4">
-  <div class="card h-100">
-    <img src="images/smartprinter.jpg" class="card-img-top" alt="Smart cloud-connected printer using Raspberry Pi and MQTT" />
-    <div class="card-body">
-      <h3 class="card-title">Smart Cloud Printer (MQTT + Raspberry Pi)</h3>
       <p>
-        Developed a smart cloud-connected printing system at Yarsa Tech. Using a
-        <strong>Raspberry Pi</strong> and <strong>MQTT</strong>, the system
-        converts legacy printers into modern IoT-enabled devices, supporting
-        network printing, automated job handling, and remote monitoring through
-        a cloud message broker.
+        <a href="https://github.com/sh7vashrestha" target="_blank" rel="noopener">GitHub</a>
+        <span class="sep">·</span>
+        <a href="https://www.linkedin.com/in/sh7va/" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="sep">·</span>
+        <a href="https://scholar.google.com/citations?user=8IwSr08AAAAJ&amp;hl" target="_blank" rel="noopener">Google Scholar</a>
+        <span class="sep">·</span>
+        <a href="https://www.instagram.com/sh7va_shrestha/" target="_blank" rel="noopener">Instagram</a>
+        <span class="sep">·</span>
+        <a href="data/Shiva_CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
       </p>
-      <!-- optional GitHub link if you want -->
-      <!-- <a class="btn-ink" href="#" target="_blank" rel="noopener">Code</a> -->
     </div>
-  </div>
+  </section>
+
+  <footer class="foot">
+    <p>Shiva Shrestha · Kennesaw State University</p>
+    <p>Updated <span id="yr"></span></p>
+  </footer>
+
 </div>
-
-        </div>
-        
-      </section>
-
-      
-      <!-- Experience -->
-      <section id="experience" class="section">
-        <h2>Experience</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-title">Graduate Research Assistant, Kennesaw State University</div>
-            <div class="timeline-meta">April 2025 to Present • Advisor: <a class="link-ink" href="#advisor">Dr. Honghui Xu</a></div>
-            <ul>
-              <li>Secure and privacy-preserving LLMs on edge devices, systems mechanisms for on-device ML</li>
-              <li>Federated fine-tuning using LoRA with differential privacy for resource constrained deployments</li>
-            </ul>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-title">Electronics Engineer, Yarsa Tech, Nepal</div>
-            <div class="timeline-meta">March 2024 to Aug 2024</div>
-            <ul>
-              <li>ESP8266 audio system with SPI flash and DAC, STM32 interactive toy platform</li>
-              <li>Cloud printing using Raspberry Pi, CUPS and MQTT, automated barcode printing</li>
-            </ul>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-title">Robotics Club, IOE Pashchimanchal Campus</div>
-            <div class="timeline-meta">2021 to 2023 • Core member, Design Transformer</div>
-            <ul>
-              <li>Graphics and branding, PCB design and embedded programming training</li>
-              <li>Micromouse, FPP drone, battlebot and robotic arm projects, national level events</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Blogs -->
-      <section id="blogs" class="section">
-        <h2>Blogs</h2>
-        <div class="row g-3">
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100">
-              <img src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-11.jpg" class="card-img-top" alt="Apple iPhone representing innovation and trendsetting" />
-              <div class="card-body">
-                <h3 class="card-title">Apple: The Trendsetter</h3>
-                <p class="text-muted">July 1, 2020</p>
-                <p>Exploring Apple's influence on technology trends and consumer behavior in the modern tech landscape.</p>
-                <a class="btn-ink" href="https://forefronttechno.wordpress.com/2020/07/02/apple-the-trend-setter/" target="_blank" rel="noopener">Read</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100">
-              <img src="https://forefronttechno.wordpress.com/wp-content/uploads/2020/07/1.jpg?w=120" class="card-img-top" alt="Google Pixel smartphone showcasing software optimization" />
-              <div class="card-body">
-                <h3 class="card-title">Google Pixel: Software versus Hardware</h3>
-                <p class="text-muted">July 1, 2020</p>
-                <p>Analysis of Google's approach to smartphone development, balancing software innovation with hardware capabilities.</p>
-                <a class="btn-ink" href="https://forefronttechno.wordpress.com/2020/07/01/google-pixel-state-of-the-art-software-meets-the-mediocre-hardware/" target="_blank" rel="noopener">Read</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100">
-              <img src="https://forefronttechno.wordpress.com/wp-content/uploads/2020/05/74545.jpg?w=747" class="card-img-top" alt="Tesla electric vehicle representing the future of transportation" />
-              <div class="card-body">
-                <h3 class="card-title">Tesla: Future of Transportation?</h3>
-                <p class="text-muted">May 11, 2020</p>
-                <p>Examining Tesla's impact on the automotive industry and the transition to sustainable transportation.</p>
-                <a class="btn-ink" href="https://forefronttechno.wordpress.com/2020/05/11/tesla-future-of-worlds-transportation/" target="_blank" rel="noopener">Read</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100">
-              <img src="https://forefronttechno.wordpress.com/wp-content/uploads/2020/05/1235.png?w=300" class="card-img-top" alt="Zoom video conferencing platform during pandemic era" />
-              <div class="card-body">
-                <h3 class="card-title">Rise of Zoom</h3>
-                <p class="text-muted">May 10, 2020</p>
-                <p>How Zoom became essential during the pandemic and transformed remote communication worldwide.</p>
-                <a class="btn-ink" href="https://forefronttechno.wordpress.com/2020/05/10/rise-of-zoom/" target="_blank" rel="noopener">Read</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100">
-              <img src="https://forefronttechno.wordpress.com/wp-content/uploads/2020/05/454.jpg?w=328" class="card-img-top" alt="Modern smartphone technology and future innovations" />
-              <div class="card-body">
-                <h3 class="card-title">Future of Smartphone</h3>
-                <p class="text-muted">May 10, 2020</p>
-                <p>Predictions and analysis of upcoming smartphone technologies and their potential impact on society.</p>
-                <a class="btn-ink" href="https://forefronttechno.wordpress.com/2020/05/10/future-of-smartphones/" target="_blank" rel="noopener">Read</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact -->
-      <section id="contact" class="section">
-        <h2>Contact</h2>
-        <div class="row g-3">
-          <div class="col-md-7">
-            <div class="card p-3">
-              <h3 class="mb-2">Get in Touch</h3>
-              <p class="mb-2"><strong>Academic Email:</strong><br /><a class="link-ink" href="mailto:sshres16@students.kennesaw.edu">sshres16@students.kennesaw.edu</a></p>
-              <p class="mb-3"><strong>Personal Email:</strong><br /><a class="link-ink" href="mailto:sh7vashrestha@gmail.com">sh7vashrestha@gmail.com</a></p>
-              <div class="d-flex gap-3 align-items-center">
-                <a class="link-ink" href="data/Shiva_CV.pdf" target="_blank" rel="noopener" aria-label="Download CV">📎 CV</a>
-                <a class="link-ink" href="https://github.com/sh7vashrestha" target="_blank" rel="noopener" aria-label="GitHub profile">🐙 GitHub</a>
-                <a class="link-ink" href="https://www.instagram.com/sh7va_shrestha/" target="_blank" rel="noopener" aria-label="Instagram profile">📷 Instagram</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer>
-        © <span id="currentYear"></span> Shiva Shrestha • Hand‑drawn theme
-      </footer>
-    </div>
-  </div>
-
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-  <script>
-    // Theme management with accessible toggle label
-    const themeToggle = document.getElementById('themeToggle');
-    const toggleLabel = document.getElementById('toggleLabel');
-
-    const applyThemeUI = (mode) => {
-      document.documentElement.setAttribute('data-theme', mode);
-      localStorage.setItem('theme', mode);
-      const dark = mode === 'dark';
-      themeToggle.setAttribute('aria-pressed', String(dark));
-      toggleLabel.textContent = dark ? 'Dark' : 'Light';
-    };
-
-    const savedTheme =
-      localStorage.getItem('theme') ||
-      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    applyThemeUI(savedTheme);
-
-    themeToggle.addEventListener('click', () => {
-      const cur = document.documentElement.getAttribute('data-theme');
-      applyThemeUI(cur === 'dark' ? 'light' : 'dark');
-    });
-
-    // Current year
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-    // Smooth scroll for anchors
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const id = a.getAttribute('href');
-        if (id.length > 1) {
-          e.preventDefault();
-          const el = document.querySelector(id);
-          if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 110, behavior: 'smooth' });
-        }
-      });
-    });
-  </script>
+<script src="js/main.js"></script>
 </body>
 </html>
