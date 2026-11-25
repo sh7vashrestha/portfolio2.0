@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shiva Shrestha · 3D portfolio</title>
+  <link rel="icon" href="../images/ShivaLOGO.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    { "imports": { "three": "./vendor/three.module.js", "three/addons/": "./vendor/addons/" } }
+  </script>
+</head>
+<body>
+  <header class="bar">
+    <button class="brand" data-go="core">Shiva Shrestha</button>
+    <nav class="stations" aria-label="Sections"></nav>
+    <button class="tour">Take the tour</button>
+    <a class="classic" href="../index.html">Classic page</a>
+  </header>
+
+  <div id="scene" aria-hidden="true"></div>
+  <div class="loader">Loading…</div>
+
+  <aside class="panel" aria-live="polite" hidden>
+    <div class="panel-head">
+      <span class="crumb"></span>
+      <span class="panel-step" hidden>
+        <button class="step-prev" aria-label="Previous item">‹ Prev</button>
+        <button class="step-next" aria-label="Next item">Next ›</button>
+      </span>
+      <button class="panel-close" aria-label="Close panel">×</button>
+    </div>
+    <div class="panel-body"></div>
+  </aside>
+
+  <div class="hovercard" hidden><b></b><span></span><i></i></div>
+  <p class="hint">Drag to orbit · scroll to zoom · ← → to step through · click anything</p>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
