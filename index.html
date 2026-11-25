@@ -45,7 +45,7 @@
       <h1>Shiva Shrestha</h1>
       <p class="role">PhD Student in Computer Science, Kennesaw State University</p>
       <p>I am a Graduate Research Assistant working with <a href="https://scholar.google.com/citations?user=2Mr7jRoAAAAJ&amp;hl=en" target="_blank" rel="noopener">Dr. Honghui Xu</a>. I work on secure and private AI for edge devices: federated fine-tuning of on-device LLMs, privacy in medical AI, and drones that can sense, decide and defend themselves without a cloud connection.</p>
-      <p>Before my PhD I completed a B.E. in Electronics, Communication and Information Engineering at Tribhuvan University, IOE Pashchimanchal Campus, where I graduated at the top of the faculty under <a href="https://www.researchgate.net/profile/Smita-Adhikari-2" target="_blank" rel="noopener">Asst. Prof. Smita Adhikari</a>, and worked as an electronics engineer at Yarsa Tech.</p>
+      <p>Before my PhD, I completed a B.E. in Electronics, Communication and Information Engineering at Tribhuvan University, IOE Pashchimanchal Campus. I graduated at the top of my faculty, did undergraduate research with <a href="https://www.researchgate.net/profile/Smita-Adhikari-2" target="_blank" rel="noopener">Asst. Prof. Smita Adhikari</a> and worked as an electronics engineer at Yarsa Tech.</p>
       <p class="links">
         <a href="mailto:sshres16@students.kennesaw.edu">Email</a>
         <a href="data/Shiva_CV.pdf" target="_blank" rel="noopener">CV</a>
@@ -104,10 +104,10 @@
         <p class="venue">Big Data Mining and Analytics</p>
       </li>
       <li class="pub">
-        <p class="pub-venue-tag">IRO Journal 2024</p>
+        <p class="pub-venue-tag">JAICN 2024</p>
         <h3><a href="https://doi.org/10.36548/jaicn.2024.3.004" target="_blank" rel="noopener">Automated Waste Sorting with Delta Arm and YOLOv8 Detection</a></h3>
         <p class="authors">Prateek Paudel*, Samman Shrestha*, <strong>Shiva Shrestha*</strong>, Sudarshan Gurung*, Smita Adhikari</p>
-        <p class="venue">IRO Journal on Artificial Intelligence and Computing Networks</p>
+        <p class="venue">Journal of Artificial Intelligence and Capsule Networks</p>
         <p class="pub-links"><a href="https://doi.org/10.36548/jaicn.2024.3.004" target="_blank" rel="noopener">paper</a><a href="https://github.com/sh7vashrestha/DeltaArm" target="_blank" rel="noopener">code</a></p>
       </li>
       <li class="pub">
@@ -140,42 +140,42 @@
         <div>
           <h4>UAV-MAID: Intrusion Detection for Drone Swarms</h4>
           <p class="meta">2026 · Paper under review</p>
-          <p>Judges each drone in a swarm from what its honest neighbours overhear it relay. A random forest, an attention-based relay network and a flight-relative outlier detector are fused into one trust verdict per drone, and a classifier names the attack type. On 567 simulated ns-3 flights it caught 80% of attack types never seen in training, against 59% for the best of ten baselines.</p>
+          <p>UAV-MAID judges each drone in a swarm by what its honest neighbors overhear it relay. It combines a random forest, an attention-based relay network and a flight-relative outlier detector into one trust verdict per drone, and a classifier names the attack type. On 567 simulated ns-3 flights, it detected 80% of attack types never seen in training, compared with 59% for the best of ten baselines.</p>
         </div>
       </li>
       <li class="project project-text">
         <div>
           <h4>KESTREL: Offline AI Search-and-Rescue Drone</h4>
           <p class="meta">2026 · AGI Hackathon</p>
-          <p>An operator marks a search area on a phone or describes it in chat. A Jetson Orin Nano on the drone plans the survey with an on-device Gemma model, uploads it to a Pixhawk 6X and flies it after a human GO. It finds the person with YOLO, a thermal camera and CLIP, then writes a flight summary with photos. Everything runs on the drone, with no internet connection.</p>
+          <p>An operator marks a search area on a phone or describes it in chat. A Jetson Orin Nano on the drone plans the survey with an on-device Gemma model, uploads it to a Pixhawk 6X and flies it once a person approves. It finds the person with YOLO, a thermal camera and CLIP, then writes a flight summary with photos. Everything runs on the drone, with no internet connection.</p>
         </div>
       </li>
       <li class="project project-text">
         <div>
           <h4>DamageScout: UAV Building Damage Assessment</h4>
           <p class="meta">2025 · <a href="https://github.com/sh7vashrestha/UAV" target="_blank" rel="noopener">code</a></p>
-          <p>Onboard pipeline for post-disaster building inspection on a Jetson and Pixhawk drone. It runs YOLOv5 in flight, records video and telemetry, geolocates each detection and groups repeated sightings into building-level damage records using FEMA-aligned categories.</p>
+          <p>An onboard pipeline for post-disaster building inspection on a drone with a Jetson and a Pixhawk. It runs YOLOv5 in flight, records video and telemetry, geolocates each detection and groups repeated sightings into building-level damage records using FEMA-aligned categories.</p>
         </div>
       </li>
       <li class="project project-text">
         <div>
           <h4>Thermo-FL: Thermal-Aware Federated Fine-Tuning</h4>
           <p class="meta">Paper under review</p>
-          <p>Federated fine-tuning for LLMs on edge devices that adapts to device temperature, with sparse LoRA communication and robust aggregation.</p>
+          <p>A federated fine-tuning method for LLMs on edge devices. It adapts training to each device's temperature, sends sparse LoRA updates and uses robust aggregation.</p>
         </div>
       </li>
       <li class="project project-text">
         <div>
           <h4>ClinX: Privacy-Preserving Medical VQA</h4>
           <p class="meta">Medical AI</p>
-          <p>Multimodal medical visual question answering that masks patient information with OCR, restores the masked images with a PP-GAN, and checks that they stay useful with LLaVA-Med.</p>
+          <p>A privacy-preserving pipeline for medical visual question answering. It finds and masks patient information with OCR, restores the masked images with a PP-GAN and checks with LLaVA-Med that they are still useful.</p>
         </div>
       </li>
       <li class="project project-text">
         <div>
           <h4>Edge-LLM Intrusion Detection</h4>
           <p class="meta">Raspberry Pi</p>
-          <p>Syscall anomaly detection on a Raspberry Pi with n-gram features and Isolation Forest, with an LLM that explains each alert.</p>
+          <p>Detects unusual system-call activity on a Raspberry Pi using n-gram features and an Isolation Forest. An LLM then explains each alert.</p>
         </div>
       </li>
     </ul>
@@ -187,7 +187,7 @@
         <div>
           <h4>Delta Arm Waste Classifier</h4>
           <p class="meta">2023–24 · <a href="https://github.com/sh7vashrestha/DeltaArm" target="_blank" rel="noopener">code</a></p>
-          <p>Delta robot with YOLOv8 detection that sorts bio, paper, plastic and metal waste, reaching 0.98 mAP@50 on a custom labelled dataset.</p>
+          <p>A delta robot that uses YOLOv8 detection to sort biodegradable, paper, plastic and metal waste. It reached 0.98 mAP@50 on a custom labeled dataset.</p>
         </div>
       </li>
       <li class="project">
@@ -195,7 +195,7 @@
         <div>
           <h4>STM32 Multilingual Toy</h4>
           <p class="meta">2024 · Yarsa Tech</p>
-          <p>Educational toy on STM32 with onboard flash, DAC output and an audio amplifier that plays stories and songs in English and Nepali.</p>
+          <p>An STM32-based educational toy that plays stories and songs in English and Nepali, using onboard flash, a DAC and an audio amplifier.</p>
         </div>
       </li>
       <li class="project">
@@ -203,7 +203,7 @@
         <div>
           <h4>Smart Cloud Printer</h4>
           <p class="meta">2024 · Yarsa Tech</p>
-          <p>Turns legacy printers into connected devices with a Raspberry Pi, CUPS and MQTT for remote job management and monitoring.</p>
+          <p>Turns legacy printers into connected devices using a Raspberry Pi, CUPS and MQTT, so print jobs can be sent and monitored remotely.</p>
         </div>
       </li>
       <li class="project">
@@ -211,7 +211,7 @@
         <div>
           <h4>High-Altitude Weather Prediction via LoRa</h4>
           <p class="meta">2023 · <a href="https://github.com/SulavGaire/Weather-prediction" target="_blank" rel="noopener">code</a></p>
-          <p>LoRa telemetry from remote stations with XGBoost forecasting, for high-altitude regions without cellular coverage.</p>
+          <p>Weather stations in high-altitude regions without cellular coverage send data over LoRa, and an XGBoost model forecasts the weather.</p>
         </div>
       </li>
       <li class="project">
@@ -219,7 +219,7 @@
         <div>
           <h4>Smart Access System</h4>
           <p class="meta">2023 · <a href="https://github.com/sh7vashrestha/SmartAccessSystem" target="_blank" rel="noopener">code</a></p>
-          <p>ESP32 RFID access control with smoke detection, automatic lighting and a phone app.</p>
+          <p>An ESP32 RFID access-control system with smoke detection, automatic lighting and a phone app.</p>
         </div>
       </li>
       <li class="project">
@@ -227,7 +227,7 @@
         <div>
           <h4>Sajilo Ambulance: Triage Prediction</h4>
           <p class="meta">2023 · GritFeat AI Hackathon · <a href="https://github.com/sh7vashrestha/triage-GritFeatAIHackathon" target="_blank" rel="noopener">code</a></p>
-          <p>Ambulance dispatch app with SVM and random forest models that predict patient triage level and outcomes.</p>
+          <p>An ambulance dispatch app that uses SVM and random forest models to predict patient triage levels and outcomes.</p>
         </div>
       </li>
       <li class="project">
@@ -235,7 +235,7 @@
         <div>
           <h4>Six-Axis Robotic Arm</h4>
           <p class="meta">2022 · 1st place, Mechtrix · <a href="https://github.com/WRCRoboticsClub/robotics-arm" target="_blank" rel="noopener">code</a></p>
-          <p>Robotic arm with gesture mirroring, AI object classification and autonomous pick-and-place.</p>
+          <p>A robotic arm that mirrors hand gestures, classifies objects with AI and picks and places them on its own.</p>
         </div>
       </li>
     </ul>
@@ -246,11 +246,11 @@
     <ul class="rows">
       <li>
         <div class="row-head"><h3>Graduate Research Assistant, Kennesaw State University</h3><span class="date">Apr 2025 – Present</span></div>
-        <p>Secure and private LLMs on edge devices, federated fine-tuning with LoRA and differential privacy, and security and autonomy for UAVs and drone swarms.</p>
+        <p>Research on secure and private LLMs for edge devices, federated fine-tuning with LoRA and differential privacy, and security and autonomy for drones and drone swarms.</p>
       </li>
       <li>
         <div class="row-head"><h3>Electronics Engineer, Yarsa Tech, Nepal</h3><span class="date">Mar 2024 – Aug 2024</span></div>
-        <p>ESP8266 audio system with SPI flash, an STM32 multilingual toy, and cloud printing with Raspberry Pi, CUPS and MQTT, including automated barcode printing.</p>
+        <p>Built an ESP8266 audio system with SPI flash and an STM32 multilingual toy. Set up cloud printing with a Raspberry Pi, CUPS and MQTT, and automated industrial barcode printing.</p>
       </li>
       <li>
         <div class="row-head"><h3>Robotics Club, IOE Pashchimanchal Campus</h3><span class="date">2021 – 2024</span></div>

@@ -6,6 +6,7 @@
 \usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage{enumitem}
+\usepackage{needspace}
 \usepackage[expansion=false]{microtype}
 
 \definecolor{cobalt}{HTML}{1D4ED8}
@@ -69,7 +70,7 @@
 \vspace{-4pt}
 
 \sectiontitle{SUMMARY}
-Applied ML researcher specializing in secure on-device LLMs, multimodal medical AI, and embedded intelligent systems. Experienced in LLM fine-tuning, federated optimization, differential privacy, edge deployment, robotics, IoT, and full-stack embedded ML pipelines.
+Applied ML researcher specializing in secure on-device LLMs, multimodal medical AI, drone security and autonomy, and embedded intelligent systems. Experienced in LLM fine-tuning, federated optimization, differential privacy, edge deployment, robotics, IoT, and full-stack embedded ML pipelines.
 
 \sectiontitle{EDUCATION}
 \datedtitle{PhD, Computer Science}{2025--Present}
@@ -85,22 +86,21 @@ IOE WRC, Tribhuvan University\\
 \sectiontitle{RESEARCH \& INDUSTRY EXPERIENCE}
 \role{Graduate Research Assistant}{2025--Present}{Kennesaw State University}
 \begin{itemize}
-  \item UAV-MAID: Built an intrusion detection framework for drone swarms that judges each drone from what its honest neighbours overhear it relay, fusing a random forest, an attention-based relay network and a flight-relative outlier detector. On 567 simulated ns-3 flights it detected 80\% of attack types unseen in training, against 59\% for the best of ten baselines.
-  \item KESTREL: Built an offline AI search-and-rescue drone on a Jetson Orin Nano and Pixhawk 6X. An on-device Gemma model plans the survey from a phone map or chat request, and YOLO, a thermal camera and CLIP find the person, with human approval gates before flight.
-  \item DP-FedLoRA: Contributed to differentially private federated on-device LLM adaptation; recognized as ICDM 2025 Best Paper Runner-Up.
+  \item UAV-MAID: Built an intrusion detection framework for drone swarms that judges each drone from what its honest neighbors overhear it relay, fusing a random forest, an attention-based relay network and a flight-relative outlier detector. On 567 simulated ns-3 flights it detected 80\% of attack types unseen in training, compared with 59\% for the best of ten baselines.
+  \item DP-FedLoRA: Contributed to differentially private federated on-device LLM adaptation. The paper received the ICDM 2025 Best Paper Runner-Up award.
   \item KDLLM (First Author): Developed a knowledge-distillation-based framework for LLM copyright preservation, enabling compact student-model training while protecting proprietary teacher-model ownership.
   \item MedSpeak: Built a spoken medical QA pipeline integrating Whisper ASR, knowledge-graph grounding, and LLM-based semantic correction.
   \item ClinX: Designed a privacy-preserving multimodal medical VQA framework with OCR-based PHI masking, PP-GAN restoration, and LLaVA-Med evaluation.
   \item Edge-LLM IDS: Implemented syscall-based anomaly detection using n-gram features, Isolation Forest, and LLM-assisted explanation on Raspberry Pi.
-  \item DamageScout (UAV Damage Assessment): Built an onboard computer-vision pipeline for real-time disaster damage assessment on Jetson Orin Nano, integrating GPS geo-tagging and Pixhawk telemetry. It groups repeated detections into building-level damage records.
+  \item DamageScout (UAV Damage Assessment): Built an onboard computer-vision pipeline for real-time disaster damage assessment on a Jetson Orin Nano, integrating GPS geo-tagging and Pixhawk telemetry. It groups repeated detections into building-level damage records.
 \end{itemize}
 
 \role{Electronics Engineer}{Apr 2024--Aug 2024}{Yarsa Tech, Nepal}
 \begin{itemize}
-  \item Built STM32 multilingual toy: Flash storage + DAC + amplifier audio system.
-  \item Developed ESP8266 audio playback system with SPI Flash.
-  \item Designed Smart Cloud Printer: Raspberry Pi + MQTT + CUPS for automated legacy printing.
-  \item Automated industrial barcode printing (Python + Linux).
+  \item Built an STM32 multilingual toy with flash storage, a DAC and an audio amplifier.
+  \item Developed an ESP8266 audio playback system with SPI flash.
+  \item Designed a Smart Cloud Printer that automates printing on legacy printers using a Raspberry Pi, MQTT and CUPS.
+  \item Automated industrial barcode printing with Python on Linux.
 \end{itemize}
 
 \sectiontitle{PUBLICATIONS}
@@ -108,16 +108,17 @@ IOE WRC, Tribhuvan University\\
 \begin{itemize}[leftmargin=2.2em,label={}]
   \pubitem{[J1]}{\textbf{S. Shrestha}, H. Xu, Z. Xie, D. Seo, Y. Joe, W. Kim, and Y. Li. KDLLM: Copyright-Preserving LLM based on Knowledge Distillation. Tsinghua Science and Technology, 2025. \href{https://www.sciopen.com/article/10.26599/TST.2025.9010130}{Paper Link}}
   \pubitem{[J2]}{H. Xu, K. Li, \textbf{S. Shrestha}, D. Zheng, W. Chen, Z. Li, and Z. Cai. A Survey: Towards Privacy and Security in Mobile Large Language Models. Big Data Mining and Analytics, Accepted/In Press.}
-  \pubitem{[J3]}{P. Paudel, Samman Shrestha, \textbf{Shiva Shrestha}, Sudarshan Gurung, and Smita Adhikari. Automated Waste Sorting with Delta Arm and YOLOv8 Detection. IRO Journal, 2024. \href{https://doi.org/10.36548/jaicn.2024.3.004}{Paper Link}}
+  \pubitem{[J3]}{Prateek Paudel, Samman Shrestha, \textbf{Shiva Shrestha}, Sudarshan Gurung, and Smita Adhikari. Automated Waste Sorting with Delta Arm and YOLOv8 Detection. Journal of Artificial Intelligence and Capsule Networks, 2024. \href{https://doi.org/10.36548/jaicn.2024.3.004}{Paper Link}}
 \end{itemize}
 
 \textbf{Conference Papers}
 \begin{itemize}[leftmargin=2.2em,label={}]
-  \pubitem{[C1]}{H. Xu, \textbf{S. Shrestha}, W. Chen, Z. Li, and Z. Cai. DP-FedLoRA: Privacy-Enhanced Federated Fine-Tuning for On-Device Large Language Models. ICDM 2025, Best Paper Runner-Up. \href{https://icdm.zhonghuapu.com/Awards/Awards.shtml}{Award Link}}
-  \pubitem{[C2]}{Y. Song, \textbf{S. Shrestha}, C. Lyu, E. Khatibi, P. Zhang, H. Xu, N. Dutt, and A. Rahmani. MedSpeak: A Knowledge Graph-Aided ASR Error Correction Framework for Spoken Medical QA. ICASSP 2026, Accepted. \href{https://ieeexplore.ieee.org/document/11464058}{Paper Link}}
+  \pubitem{[C1]}{Y. Song, \textbf{S. Shrestha}, C. Lyu, E. Khatibi, P. Zhang, H. Xu, N. Dutt, and A. Rahmani. MedSpeak: A Knowledge Graph-Aided ASR Error Correction Framework for Spoken Medical QA. ICASSP 2026, Accepted. \href{https://ieeexplore.ieee.org/document/11464058}{Paper Link}}
+  \pubitem{[C2]}{H. Xu, \textbf{S. Shrestha}, W. Chen, Z. Li, and Z. Cai. DP-FedLoRA: Privacy-Enhanced Federated Fine-Tuning for On-Device Large Language Models. ICDM 2025, Best Paper Runner-Up. \href{https://icdm.zhonghuapu.com/Awards/Awards.shtml}{Award Link}}
   \pubitem{[C3]}{\textbf{Shiva Shrestha}, Samman Shrestha, Prateek Paudel, Sudarshan Gurung, Sulav Gairee, and Smita Adhikari. Deep Learning for Waste Management: Leveraging YOLO for Accurate Waste Classification. IOE Graduate Conference, 2024. \href{http://conference.ioe.edu.np/publications/ioegc15/IOEGC-15-004-A1-4-61.pdf}{Paper Link}}
 \end{itemize}
 
+\needspace{4\baselineskip}
 \textbf{Submitted Manuscripts}
 \begin{itemize}[leftmargin=2.2em,label={}]
   \pubitem{[S1]}{\textbf{S. Shrestha}, K. S. Sharif, A. Xiang, Z. Xie, J. Huang, and H. Xu. Thermo-FL: Thermal-Aware Robust Federated Fine-Tuning of Large Language Models for Edge AI. Submitted to NDSS.}
@@ -126,18 +127,18 @@ IOE WRC, Tribhuvan University\\
 
 \sectiontitle{SELECTED PROJECTS}
 \begin{itemize}
-  \item UAV-MAID (Drone Swarm Intrusion Detection): Built a drone-swarm intrusion detector using honest-neighbour relay observations, a random forest, an attention-based relay network, and a flight-relative outlier detector. It detected 80\% of unseen attack types on 567 simulated ns-3 flights, against 59\% for the best of ten baselines.
-  \item KESTREL (Offline Search-and-Rescue Drone, AGI Hackathon 2026): Built an offline drone on Jetson Orin Nano and Pixhawk 6X. An on-device Gemma model plans surveys from a phone map or chat request, while YOLO, a thermal camera, and CLIP find the person, with human approval gates before flight.
+  \item UAV-MAID (Drone Swarm Intrusion Detection): Built a drone-swarm intrusion detector using honest-neighbor relay observations, a random forest, an attention-based relay network, and a flight-relative outlier detector. It detected 80\% of unseen attack types on 567 simulated ns-3 flights, compared with 59\% for the best of ten baselines.
+  \item KESTREL (Offline Search-and-Rescue Drone, AGI Hackathon 2026): Built an offline drone on a Jetson Orin Nano and a Pixhawk 6X. An on-device Gemma model plans surveys from a phone map or chat request, while YOLO, a thermal camera, and CLIP find the person. A person must approve each flight.
   \item MedSpeak (LLM + ASR + KG): Developed a spoken medical QA framework using Whisper ASR, knowledge-graph grounding, and LLM-based semantic error correction.
   \item ClinX: Designed a privacy-aware multimodal medical AI pipeline using PP-GAN-based image restoration and LLaVA-Med-based utility evaluation.
   \item Thermo-FL: Built a thermal-aware federated fine-tuning framework for edge LLMs with sparse LoRA communication and robust aggregation.
   \item Edge-LLM Intrusion Detection: Implemented syscall anomaly detection using n-gram feature extraction, Isolation Forest, and LLM-assisted analysis.
   \item DamageScout: Developed an edge-deployed visual damage assessment system for disaster mapping with onboard inference and GPS-based geo-tagging.
   \item Delta Arm Waste Classifier: Built a YOLOv8-based robotic waste-sorting system using a delta arm, achieving 0.98 mAP@50.
-  \item Ambulance Triage (Sajilo): Developed an ambulance dispatch and triage application with SVM- and Random Forest-based severity prediction.
+  \item Ambulance Triage (Sajilo): Developed an ambulance dispatch and triage application with SVM and random forest models that predict severity.
   \item LoRa Weather System: Created a long-range environmental telemetry system with LoRa communication and ML-based forecasting.
   \item Smart Cloud Printer: Built an IoT-enabled cloud printing system using Raspberry Pi, MQTT, and CUPS.
-  \item STM32 Storytelling Toy: Developed an embedded multilingual audio playback system using STM32 Flash storage.
+  \item STM32 Storytelling Toy: Developed an embedded multilingual audio playback system using STM32 flash storage.
   \item Smart Access System: Designed an ESP32-based RFID access control system with integrated smoke detection and automation.
 \end{itemize}
 
@@ -145,7 +146,7 @@ IOE WRC, Tribhuvan University\\
 \begin{itemize}
   \item Languages: Python, C/C++, JavaScript
   \item Machine Learning: PyTorch, TensorFlow, Scikit-learn, PEFT/LoRA, Whisper, LLaVA, CLIP, XGBoost
-  \item Edge and Embedded Systems: ArduPilot/MAVLink, NVIDIA Jetson, Raspberry Pi, STM32, ESP32/8266, Pixhawk, Embedded Linux
+  \item Edge and Embedded Systems: ArduPilot/MAVLink, NVIDIA Jetson, Raspberry Pi, STM32, ESP32/ESP8266, Pixhawk, Embedded Linux
   \item IoT and Systems: MQTT, CUPS, syscall tracing, shell scripting, Docker, Linux, ns-3
   \item Web and Databases: React, Node.js, Tailwind, MongoDB, MySQL, Firebase
   \item Hardware and Development Tools: Git, KiCad, Keil, VS Code
