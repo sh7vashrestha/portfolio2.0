@@ -25,25 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  const main = document.querySelector("main");
-  const layoutSpine = () => {
-    const heads = sections.map((section) => section.querySelector("h2")).filter(Boolean);
-    if (!main || heads.length < 2) return;
-    const base = main.getBoundingClientRect().top;
-    const mid = (el) => { const r = el.getBoundingClientRect(); return r.top + r.height / 2 - base; };
-    const top = mid(heads[0]);
-    main.style.setProperty("--spine-top", `${top}px`);
-    main.style.setProperty("--spine-h", `${mid(heads[heads.length - 1]) - top}px`);
-  };
-
   let ticking = false;
   window.addEventListener("scroll", () => {
     if (ticking) return;
     ticking = true;
     requestAnimationFrame(() => { update(); ticking = false; });
   }, { passive: true });
-  window.addEventListener("resize", () => { layoutSpine(); update(); });
-  window.addEventListener("load", layoutSpine);
-  layoutSpine();
+  window.addEventListener("resize", update);
   update();
 });
