@@ -1,0 +1,145 @@
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage[letterpaper,margin=0.5in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[scaled=0.96]{helvet}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage[expansion=false]{microtype}
+\usepackage{hyperref}
+
+\definecolor{accent}{HTML}{0F766E}
+\definecolor{muted}{HTML}{5F6670}
+\renewcommand{\familydefault}{\sfdefault}
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\arraystretch}{1}
+
+\setlist[itemize]{leftmargin=1.1em, label=\textbullet, itemsep=0.6pt,
+  topsep=1pt, parsep=0pt, partopsep=0pt, after=\vspace{-\baselineskip}}
+
+% Left column width for dates and labels
+\newlength{\leftcol}
+\setlength{\leftcol}{1.08in}
+\newcolumntype{L}{>{\raggedright\arraybackslash\small\leavevmode\color{muted}}p{\leftcol}}
+
+\newcommand{\sectiontitle}[1]{%
+  \needspace{3\baselineskip}%
+  \vspace{5pt}%
+  {\color{accent}\large\bfseries #1}\par
+  \vspace{1.5pt}{\color{accent}\hrule height 0.5pt}%
+  \vspace{4pt}%
+}
+\newcommand{\subtitle}[1]{%
+  \needspace{2\baselineskip}%
+  \vspace{1pt}{\small\bfseries\color{muted}\MakeUppercase{#1}}\par\vspace{2pt}%
+}
+% \cvrow{left column}{right column}
+\newcommand{\cvrow}[2]{%
+  \noindent\begin{tabularx}{\linewidth}{@{}L@{\hspace{0.14in}}X@{}}
+    #1 & #2
+  \end{tabularx}\par\vspace{3pt}%
+}
+
+\begin{document}
+
+{\fontsize{24}{26}\selectfont\bfseries\color{accent} Shiva Shrestha}\par
+\vspace{3pt}
+{\normalsize PhD Student in Computer Science, Kennesaw State University\enspace\textcolor{muted}{|}\enspace Marietta, Georgia, USA}\par
+\vspace{1pt}
+{\small\color{muted} Applied Machine Learning\enspace|\enspace Embedded Systems\enspace|\enspace Secure Edge AI}\par
+\vspace{3pt}
+{\footnotesize
+  \href{mailto:sshres16@students.kennesaw.edu}{sshres16@students.kennesaw.edu}
+  \enspace\textcolor{muted}{|}\enspace
+  \href{mailto:sh7vashrestha@gmail.com}{sh7vashrestha@gmail.com}
+  \enspace\textcolor{muted}{|}\enspace
+  \href{https://shivashrestha7.com.np}{shivashrestha7.com.np}
+  \enspace\textcolor{muted}{|}\enspace
+  \href{https://linkedin.com/in/sh7va}{linkedin.com/in/sh7va}
+  \enspace\textcolor{muted}{|}\enspace
+  \href{https://github.com/sh7vashrestha}{github.com/sh7vashrestha}
+}\par
+
+\sectiontitle{Summary}
+Applied ML researcher specializing in secure on-device LLMs, multimodal medical AI, drone security and autonomy, and embedded intelligent systems. Experienced in LLM fine-tuning, federated optimization, differential privacy, edge deployment, robotics, IoT, and full-stack embedded ML pipelines.
+
+\sectiontitle{Education}
+\cvrow{2025 -- Present}{\textbf{PhD, Computer Science}, Kennesaw State University, USA\newline
+  Focus: Edge Security, Federated Learning, On-device LLMs. Advisor: Dr. Honghui Xu}
+\cvrow{2019 -- 2024}{\textbf{B.E., Electronics, Communication \& Information Engineering}, IOE WRC, Tribhuvan University\newline
+  82.32\% (Faculty Topper)}
+
+\sectiontitle{Research \& Industry Experience}
+\cvrow{Apr 2025 -- Present}{\textbf{Graduate Research Assistant}, Kennesaw State University
+\begin{itemize}
+  \item \textbf{UAV-MAID:} Built an intrusion detection framework for drone swarms that judges each drone from what its honest neighbors overhear it relay, fusing a random forest, an attention-based relay network and a flight-relative outlier detector. On 567 simulated ns-3 flights, it detected 80\% of attack types unseen in training, compared with 59\% for the best of ten baselines.
+  \item \textbf{DP-FedLoRA:} Contributed to differentially private federated on-device LLM adaptation. The paper received the ICDM 2025 Best Paper Runner-Up award.
+  \item \textbf{KDLLM (first author):} Developed a knowledge-distillation-based framework for LLM copyright preservation, enabling compact student-model training while protecting proprietary teacher-model ownership.
+  \item \textbf{Thermo-FL:} Built a thermal-aware federated fine-tuning framework for edge LLMs with sparse LoRA communication and robust aggregation.
+  \item \textbf{MedSpeak:} Built a spoken medical QA pipeline integrating Whisper ASR, knowledge-graph grounding, and LLM-based semantic correction.
+  \item \textbf{ClinX:} Designed a privacy-preserving multimodal medical VQA framework with OCR-based PHI masking, PP-GAN restoration, and LLaVA-Med evaluation.
+  \item \textbf{Edge-LLM IDS:} Implemented syscall-based anomaly detection on a Raspberry Pi using n-gram features, Isolation Forest, and LLM-assisted explanation.
+  \item \textbf{DamageScout (UAV damage assessment):} Built an onboard computer-vision pipeline for real-time disaster damage assessment on a Jetson Orin Nano, integrating GPS geo-tagging and Pixhawk telemetry. It groups repeated detections into building-level damage records.
+\end{itemize}}
+\cvrow{Mar -- Aug 2024}{\textbf{Electronics Engineer}, Yarsa Tech, Nepal
+\begin{itemize}
+  \item Built an STM32 multilingual storytelling toy with flash storage, a DAC and an audio amplifier.
+  \item Developed an ESP8266 audio playback system with SPI flash.
+  \item Designed a Smart Cloud Printer that automates printing on legacy printers using a Raspberry Pi, MQTT and CUPS.
+  \item Automated industrial barcode printing with Python on Linux.
+\end{itemize}}
+
+\sectiontitle{Publications}
+\subtitle{Journal Articles}
+\cvrow{TST 2025}{\textbf{S. Shrestha}, H. Xu, Z. Xie, D. Seo, Y. Joe, W. Kim, and Y. Li. KDLLM: Copyright-Preserving LLM based on Knowledge Distillation. \textit{Tsinghua Science and Technology}, 2025. \href{https://www.sciopen.com/article/10.26599/TST.2025.9010130}{[Paper]}}
+\cvrow{BDMA 2026}{H. Xu, K. Li, \textbf{S. Shrestha}, D. Zheng, W. Chen, Z. Li, and Z. Cai. A Survey: Towards Privacy and Security in Mobile Large Language Models. \textit{Big Data Mining and Analytics}, accepted April 2026, in press.}
+\cvrow{JAICN 2024}{Prateek Paudel, Samman Shrestha, \textbf{Shiva Shrestha}, Sudarshan Gurung, and Smita Adhikari. Automated Waste Sorting with Delta Arm and YOLOv8 Detection. \textit{Journal of Artificial Intelligence and Capsule Networks}, 2024. \href{https://doi.org/10.36548/jaicn.2024.3.004}{[Paper]}}
+\subtitle{Conference Papers}
+\cvrow{ICASSP 2026}{Y. Song, \textbf{S. Shrestha}, C. Lyu, E. Khatibi, P. Zhang, H. Xu, N. Dutt, and A. Rahmani. MedSpeak: A Knowledge Graph-Aided ASR Error Correction Framework for Spoken Medical QA. \textit{ICASSP 2026}. \href{https://ieeexplore.ieee.org/document/11464058}{[Paper]} \href{https://arxiv.org/abs/2602.00981}{[arXiv]}}
+\cvrow{ICDM 2025}{H. Xu, \textbf{S. Shrestha}, W. Chen, Z. Li, and Z. Cai. DP-FedLoRA: Privacy-Enhanced Federated Fine-Tuning for On-Device Large Language Models. \textit{ICDM 2025}. \textbf{Best Paper Runner-Up.} \href{https://ieeexplore.ieee.org/document/11391811/}{[Paper]} \href{https://arxiv.org/abs/2509.09097}{[arXiv]} \href{https://icdm.zhonghuapu.com/Awards/Awards.shtml}{[Award]}}
+\cvrow{IOE GC 2024}{\textbf{Shiva Shrestha}, Samman Shrestha, Prateek Paudel, Sudarshan Gurung, Sulav Gairee, and Smita Adhikari. Deep Learning for Waste Management: Leveraging YOLO for Accurate Waste Classification. \textit{IOE Graduate Conference}, 2024. \href{http://conference.ioe.edu.np/publications/ioegc15/IOEGC-15-004-A1-4-61.pdf}{[Paper]}}
+\subtitle{Preprints}
+\cvrow{arXiv 2026}{\textbf{S. Shrestha}, K. S. Sharif, A. Xiang, Z. Xie, J. Huang, and H. Xu. Thermo-FL: Thermal-Aware Robust Federated Fine-Tuning of Large Language Models for Edge AI. \textit{arXiv:2608.21172}, 2026. \href{https://arxiv.org/abs/2608.21172}{[arXiv]}}
+\cvrow{arXiv 2026}{\textbf{S. Shrestha}, Z. Xie, C. Zhao, L. Ma, Z. Cai, and H. Xu. Masking Is Not Enough: Generative Restoration for Multimodal De-Identification in Medical AI. \textit{arXiv:2608.21133}, 2026. \href{https://arxiv.org/abs/2608.21133}{[arXiv]}}
+
+\sectiontitle{Selected Projects}
+\cvrow{2026}{\textbf{KESTREL, Offline Search-and-Rescue Drone} (AGI Hackathon). Built an offline drone on a Jetson Orin Nano and a Pixhawk 6X. An on-device Gemma model plans surveys from a phone map or chat request, while YOLO, a thermal camera, and CLIP find the person. A person must approve each flight.}
+\cvrow{2026}{\textbf{Tarakosh, Vedic Astrology Web App.} Built a browser-based astrology app on PyJHora and the Swiss Ephemeris with birth and divisional charts, dashas and matching in English, Nepali and Hindi. \href{https://tarakosh.vercel.app}{[Live]}}
+\cvrow{2026}{\textbf{Pana Reader.} Built an offline Android PDF and EPUB reader in Flutter with highlights, notes and full-text search.}
+\cvrow{2023 -- 2024}{\textbf{Delta Arm Waste Classifier.} Built a YOLOv8 delta-arm waste sorter that reached 0.98 mAP@50.}
+\cvrow{2023}{\textbf{Sajilo, Ambulance Triage.} Built an ambulance triage app with SVM and random forest severity prediction.}
+\cvrow{2023}{\textbf{LoRa Weather System.} Built long-range LoRa weather telemetry with ML-based forecasting.}
+\cvrow{2023}{\textbf{Smart Access System.} Designed an ESP32 RFID access control system with smoke detection.}
+
+\sectiontitle{Technical Skills}
+\cvrow{Languages}{Python, C/C++, JavaScript}
+\cvrow{Machine Learning}{PyTorch, TensorFlow, Scikit-learn, PEFT/LoRA, Whisper, LLaVA, CLIP, XGBoost}
+\cvrow{Edge \& Embedded}{ArduPilot/MAVLink, NVIDIA Jetson, Raspberry Pi, STM32, ESP32/ESP8266, Pixhawk, Embedded Linux}
+\cvrow{IoT \& Systems}{MQTT, CUPS, syscall tracing, shell scripting, Docker, Linux, ns-3}
+\cvrow{Web \& Databases}{React, Node.js, Tailwind, MongoDB, MySQL, Firebase}
+\cvrow{Tools}{Git, KiCad, Keil, VS Code}
+
+\sectiontitle{Honors \& Awards}
+\cvrow{2025}{Best Paper Runner-Up, IEEE ICDM 2025 (DP-FedLoRA)}
+\cvrow{2024}{Faculty Topper, BEI, IOE WRC}
+\cvrow{2024}{Winner, NSU Demo and E-GEN Expo; Runner-Up, ICES Datathon}
+\cvrow{2022}{Winner, MechTRIX}
+\cvrow{2017}{District Topper, NEB +2 Science}
+
+\sectiontitle{Service}
+\cvrow{2026}{Reviewer for IEEE Transactions on Dependable and Secure Computing (TDSC); IEEE International Conference on Tools with Artificial Intelligence (ICTAI 2026); IEEE International Performance Computing and Communications Conference (IPCCC 2026); and ACM Conference on Trustworthy and Responsible AI and Computing Systems (TRUST 2027).}
+
+\sectiontitle{Leadership \& Activities}
+\cvrow{2021 -- 2024}{Robotics Club, IOE WRC: Member (2021--22); Design Transformer, Robotics Booster (2022--23); Senior Member (2023--24)}
+\cvrow{2022}{Coordinator, Battle for Speed Robotics}
+
+\end{document}
