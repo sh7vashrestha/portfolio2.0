@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (section.getBoundingClientRect().top <= offset) current = section;
       }
     }
-    sections.forEach((section) => section.classList.toggle("is-active", section === current));
     links.forEach((a) => {
       if (current && a.getAttribute("href") === `#${current.id}`) a.setAttribute("aria-current", "true");
       else a.removeAttribute("aria-current");

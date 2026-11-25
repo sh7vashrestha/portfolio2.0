@@ -67,14 +67,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   content: ""; position: absolute; left: 10px; right: 10px; bottom: -1px; height: 2px; background: var(--accent);
 }
 
-/* Network background */
-.net {
-  position: fixed; inset: 0; z-index: 0;
-  width: 100%; height: 100%;
-  pointer-events: none;
-}
-main, .foot { position: relative; z-index: 1; }
-
 /* Intro */
 .intro {
   display: grid; grid-template-columns: 1fr 200px; gap: 48px; align-items: start;
@@ -83,6 +75,12 @@ main, .foot { position: relative; z-index: 1; }
 .intro h1 { font-size: 38px; font-weight: 700; letter-spacing: -0.02em; }
 .role { margin: 4px 0 20px; color: var(--muted); font-size: 17px; }
 .intro-text > p + p { margin-top: 14px; }
+.alt-view { margin-top: 18px !important; font-size: 14.5px; }
+.alt-view a {
+  display: inline-block; padding: 7px 14px; border: 1px solid var(--line); border-radius: 999px;
+  color: var(--ink-2); font-weight: 500; transition: border-color 0.2s, color 0.2s;
+}
+.alt-view a:hover, .alt-view a:focus-visible { text-decoration: none; border-color: var(--accent); color: var(--accent); }
 .links { display: flex; flex-wrap: wrap; gap: 6px 22px; margin-top: 22px !important; font-weight: 500; }
 .photo { width: 200px; height: 250px; object-fit: cover; object-position: center 22%; border-radius: var(--radius); }
 
@@ -132,7 +130,21 @@ main, .foot { position: relative; z-index: 1; }
 .row-head h3 { font-size: 16.5px; font-weight: 600; }
 .rows p { font-size: 15px; }
 
-#contact p { max-width: 680px; }
+#contact .sec-note { margin: -8px 0 0; }
+.out-layer {
+  list-style: none; margin: 0; padding: 20px 0 8px;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px;
+}
+.out-node {
+  display: flex; flex-direction: column; gap: 2px; height: 100%;
+  padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px;
+  color: var(--ink); line-height: 1.4; transition: border-color 0.2s, background 0.2s;
+}
+.out-node:hover, .out-node:focus-visible { text-decoration: none; border-color: var(--accent); background: var(--surface); }
+.out-dot { display: none; }
+.out-label { font-size: 14.5px; font-weight: 600; }
+.out-node:hover .out-label { color: var(--accent); }
+.out-value { font-size: 13px; color: var(--muted); overflow-wrap: anywhere; }
 
 .foot { padding: 28px 0 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13.5px; }
 
