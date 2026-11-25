@@ -1,9 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const year = document.getElementById("yr");
+  const links = new Map(
+    [...document.querySelectorAll(".nav a")].map((a) => [a.getAttribute("href").slice(1), a])
+  );
+  const sections = [...links.keys()]
+    .map((id) => document.getElementById(id))
+    .filter(Boolean);
 
-  if (year) {
-    year.textContent = new Date().getFullYear();
-  }
+  if (!("IntersectionObserver" in window) || sections.length === 0) return;
 
-  document.body.classList.add("is-ready");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        links.forEach((a) => a.removeAttribute("aria-current"));
+        links.get(entry.target.id)?.setAttribute("aria-current", "true");
+      });
+    },
+    { rootMargin: "-45% 0px -50% 0px" }
+  );
+
+  sections.forEach((section) => observer.observe(section));
 });
