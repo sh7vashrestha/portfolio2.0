@@ -1,23 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const links = new Map(
-    [...document.querySelectorAll(".nav a")].map((a) => [a.getAttribute("href").slice(1), a])
-  );
-  const sections = [...links.keys()]
-    .map((id) => document.getElementById(id))
+  const links = [...document.querySelectorAll(".nav a")];
+  const sections = links
+    .map((a) => document.getElementById(a.getAttribute("href").slice(1)))
     .filter(Boolean);
+  if (sections.length === 0) return;
 
-  if (!("IntersectionObserver" in window) || sections.length === 0) return;
+  const topbar = document.querySelector(".topbar");
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        links.forEach((a) => a.removeAttribute("aria-current"));
-        links.get(entry.target.id)?.setAttribute("aria-current", "true");
-      });
-    },
-    { rootMargin: "-45% 0px -50% 0px" }
-  );
+  const update = () => {
+    const offset = (topbar ? topbar.offsetHeight : 0) + 24;
+    const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+    let current = null;
+    if (atBottom) {
+      current = sections[sections.length - 1];
+    } else {
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= offset) current = section;
+      }
+    }
+    links.forEach((a) => {
+      if (current && a.getAttribute("href") === `#${current.id}`) a.setAttribute("aria-current", "true");
+      else a.removeAttribute("aria-current");
+    });
+  };
 
-  sections.forEach((section) => observer.observe(section));
+  let ticking = false;
+  window.addEventListener("scroll", () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => { update(); ticking = false; });
+  }, { passive: true });
+  window.addEventListener("resize", update);
+  update();
 });
